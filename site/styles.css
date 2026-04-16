@@ -796,12 +796,12 @@ img { display: block; max-width: 100%; height: auto; }
 .footer {
   background: var(--navy-deep);
   color: rgba(255,255,255,0.58);
-  padding: 72px 56px 36px;
+  padding: 72px var(--gutter) 36px;
   font-size: 14px;
 }
 .footer-inner {
   max-width: var(--content-max);
-  margin: 0 0 56px;
+  margin: 0 auto 56px;
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
   gap: 56px;
