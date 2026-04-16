@@ -361,10 +361,10 @@ img { display: block; max-width: 100%; height: auto; }
   font-style: italic;
   font-size: 46px;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.12;
   margin-bottom: 28px;
   color: var(--sage-dark);
-  letter-spacing: -0.3px;
+  letter-spacing: -1.2px;
   max-width: 800px;
   text-transform: lowercase;
 }
@@ -372,7 +372,7 @@ img { display: block; max-width: 100%; height: auto; }
   color: #FCFAF6;
   font-style: normal;
   text-transform: none;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.8px;
 }
 
 .section h3 {
@@ -380,16 +380,17 @@ img { display: block; max-width: 100%; height: auto; }
   font-style: italic;
   font-size: 30px;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.22;
   margin-bottom: 16px;
   color: var(--sage-dark);
-  letter-spacing: -0.1px;
+  letter-spacing: -0.8px;
   text-transform: lowercase;
 }
 .section-dark h3 {
   color: #FCFAF6;
   font-style: normal;
   text-transform: none;
+  letter-spacing: -0.4px;
 }
 
 .section h4 {
