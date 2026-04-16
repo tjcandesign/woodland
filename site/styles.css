@@ -16,27 +16,32 @@
   --gold-dark: #8A6508;
   --gold-soft: #D4A93D;
 
+  /* Editorial sage — used for italic serif display headings */
+  --sage: #7D8A6A;
+  --sage-dark: #5F6C4E;
+  --sage-soft: #A4AF93;
+
   /* Surfaces */
-  --bg-cream: #F5F0EB;
-  --bg-paper: #FAF7F3;
-  --bg-white: #FFFFFF;
+  --bg-cream: #F2EADD;
+  --bg-paper: #F7F2E8;
+  --bg-white: #FDFAF4;
   --bg-dark: #0F2240;
-  --bg-warm: #E8E0D8;
+  --bg-warm: #ECE3D3;
 
   /* Accents */
   --accent: #C4A882;
   --accent-dark: #A68B6B;
 
-  /* Text */
-  --text-dark: #1A1A1A;
-  --text-medium: #3F3F3F;
-  --text-soft: #6B6B6B;
-  --text-light: #8A8A8A;
+  /* Text — warmer, muted for editorial feel */
+  --text-dark: #3C342B;
+  --text-medium: #5A5146;
+  --text-soft: #7D7568;
+  --text-light: #9E9788;
   --text-white: #FFFFFF;
 
   /* Lines */
-  --border: #E3DCD3;
-  --border-strong: #C8BDB0;
+  --border: #DED3C0;
+  --border-strong: #C2B8A1;
   --border-dark: rgba(255,255,255,0.12);
 
   /* Type */
