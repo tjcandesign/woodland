@@ -47,6 +47,8 @@
   --content-max: 1160px;
   --content-narrow: 780px;
   --content-reading: 660px;
+  /* Horizontal gutter: smoothly expands to center content on wide screens */
+  --gutter: max(clamp(24px, 4vw, 56px), calc((100vw - var(--content-max)) / 2));
 
   /* Motion */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
