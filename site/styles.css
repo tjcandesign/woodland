@@ -368,11 +368,17 @@ img { display: block; max-width: 100%; height: auto; }
   opacity: 0.55;
   mix-blend-mode: multiply;
 }
+.underwriter-seals .seal-check {
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (min-width: 720px) {
   .underwriter-seals {
     flex-direction: row;
     align-items: center;
-    gap: 40px;
+    gap: 24px;
     flex-wrap: wrap;
   }
 }
