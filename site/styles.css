@@ -571,15 +571,18 @@ img { display: block; max-width: 100%; height: auto; }
 .section-cream .card { border-top-color: var(--border-strong); }
 
 .card-dark {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  padding: 32px 0 4px;
 }
-.card-dark:hover {
-  border-color: rgba(255,255,255,0.25);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.card-dark h4 {
+  color: var(--gold-soft);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: lowercase;
 }
-.card-dark h4 { color: var(--gold-soft); }
-.card-dark p { color: rgba(255,255,255,0.78); }
+.card-dark p { color: rgba(255,255,255,0.82); }
 
 /* Step (closing process) */
 .step {
