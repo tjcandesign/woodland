@@ -11,9 +11,9 @@
       1
     );
     var ratio = Math.min(Math.max(y / max, 0), 1);
-    // One full rotation across the scrollable range so it lands back
-    // at the "Woodland"-on-top orientation at page bottom.
-    ring.style.setProperty('--spin', (ratio * 360) + 'deg');
+    // One full rotation + 90° across the scrollable range so the
+    // "Woodland" word sits at the top when the user reaches the bottom.
+    ring.style.setProperty('--spin', (ratio * 450) + 'deg');
     ticking = false;
   }
   function onScroll(){
