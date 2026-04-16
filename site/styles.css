@@ -366,7 +366,7 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--sage-dark);
   letter-spacing: -1.2px;
   max-width: 800px;
-  text-transform: lowercase;
+  text-transform: none;
 }
 .section-dark h2 {
   color: #FCFAF6;
@@ -384,7 +384,7 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 16px;
   color: var(--sage-dark);
   letter-spacing: -0.8px;
-  text-transform: lowercase;
+  text-transform: none;
 }
 .section-dark h3 {
   color: #FCFAF6;
@@ -522,7 +522,7 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--sage-dark);
   margin-bottom: 18px;
   letter-spacing: -0.7px;
-  text-transform: lowercase;
+  text-transform: none;
 }
 .card p {
   font-size: 15.5px;
@@ -544,7 +544,7 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--gold-soft);
   font-style: italic;
   font-weight: 400;
-  text-transform: lowercase;
+  text-transform: none;
 }
 .card-dark p { color: rgba(255,255,255,0.82); }
 
@@ -726,7 +726,7 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 20px;
   font-weight: 400;
   letter-spacing: -1px;
-  text-transform: lowercase;
+  text-transform: none;
 }
 .value-block p {
   font-size: 17px;
