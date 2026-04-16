@@ -906,7 +906,7 @@ img { display: block; max-width: 100%; height: auto; }
 .cta-band .section-tag::before { background: var(--gold-soft); }
 .cta-band h2 {
   font-family: var(--serif);
-  font-size: 42px;
+  font-size: clamp(40px, 4.2vw, 58px);
   font-weight: 400;
   color: var(--text-white);
   margin: 0 auto 18px;
