@@ -437,12 +437,13 @@ img { display: block; max-width: 100%; height: auto; }
   font-family: var(--serif);
   font-size: 34px;
   font-style: italic;
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--sage-dark);
   padding: 0;
   margin: 36px 0;
   max-width: 820px;
   font-weight: 400;
+  letter-spacing: -0.8px;
 }
 .section-dark .pull-quote {
   color: var(--gold-soft);
