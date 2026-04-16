@@ -1207,6 +1207,9 @@ img { display: block; max-width: 100%; height: auto; }
   .split { grid-template-columns: 1fr; gap: 40px; }
   .split-aside { padding-top: 0; }
   .statement { padding-block: 80px; }
+
+  .process-mini { grid-template-columns: 1fr; gap: 36px; }
+  .process-mini-header { margin-top: 64px; padding-top: 40px; }
 }
 
 @media (max-width: 640px) {
