@@ -251,7 +251,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* Compact hero for inner pages */
 .hero.hero-compact {
   min-height: 340px;
-  padding: 110px 56px 70px;
+  padding: 110px var(--gutter) 70px;
 }
 .hero.hero-compact h1 {
   font-size: 48px;
