@@ -718,11 +718,13 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .value-block h3 {
   font-family: var(--serif);
+  font-style: italic;
   font-size: 36px;
-  color: var(--brown);
+  color: var(--sage-dark);
   margin-bottom: 20px;
   font-weight: 400;
-  letter-spacing: -0.3px;
+  letter-spacing: -1px;
+  text-transform: lowercase;
 }
 .value-block p {
   font-size: 17px;
