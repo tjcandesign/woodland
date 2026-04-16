@@ -184,7 +184,7 @@ img { display: block; max-width: 100%; height: auto; }
 .hero {
   position: relative;
   color: var(--text-white);
-  padding: 140px 56px 120px;
+  padding: 140px var(--gutter) 120px;
   overflow: hidden;
   min-height: 560px;
   display: flex;
