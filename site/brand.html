@@ -30,7 +30,9 @@
       --serif: 'EB Garamond', Georgia, serif;
       --sans: 'Inter', -apple-system, sans-serif;
       --nav-width: 260px;
-      --content-max: 820px;
+      --content-max: 1300px;
+      --content-narrow: 780px;
+      --gutter: max(clamp(24px, 4vw, 56px), calc((100vw - var(--content-max)) / 2));
     }
 
     html { scroll-behavior: smooth; }
