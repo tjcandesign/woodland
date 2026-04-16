@@ -220,7 +220,6 @@ img { display: block; max-width: 100%; height: auto; }
     scale(calc(1 + var(--hero-scroll, 0) * 0.35));
   -webkit-mask-image: radial-gradient(ellipse at 30% 45%, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,1) 100%);
           mask-image: radial-gradient(ellipse at 30% 45%, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,1) 100%);
-  transition: opacity 80ms linear;
   will-change: transform, opacity;
 }
 .hero-inner {
