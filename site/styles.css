@@ -602,18 +602,17 @@ img { display: block; max-width: 100%; height: auto; }
   letter-spacing: -1px;
 }
 .step-body h3 {
-  font-size: 32px;
-  margin-bottom: 8px;
-  color: var(--brown);
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 .step-subhead {
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--gold-dark);
-  margin-bottom: 20px;
+  color: var(--text-soft);
+  margin-bottom: 18px;
 }
 
 /* ───────────────────────────────────────────────
