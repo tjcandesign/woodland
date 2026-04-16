@@ -49,7 +49,7 @@
   --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Rhythm */
-  --content-max: 1160px;
+  --content-max: 1300px;
   --content-narrow: 780px;
   --content-reading: 660px;
   /* Horizontal gutter: smoothly expands to center content on wide screens */
