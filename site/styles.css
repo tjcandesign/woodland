@@ -1228,8 +1228,9 @@ img { display: block; max-width: 100%; height: auto; }
   .split-aside { padding-top: 0; }
   .statement { padding-block: 80px; }
 
-  .process-mini { grid-template-columns: 1fr; gap: 36px; }
-  .process-mini-header { margin-top: 64px; padding-top: 40px; }
+  .process-mini { grid-template-columns: 1fr; gap: 20px; }
+  .process-mini-arrow { padding: 8px 0; transform: rotate(90deg); justify-self: center; }
+  .process-mini-header { margin-top: 96px; }
 }
 
 @media (max-width: 640px) {
