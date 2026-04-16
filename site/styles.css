@@ -373,7 +373,7 @@ img { display: block; max-width: 100%; height: auto; }
   mix-blend-mode: multiply;
 }
 .underwriter-seals .seal-check {
-  color: var(--gold);
+  color: var(--sage-dark);
   display: inline-flex;
   align-items: center;
   justify-content: center;
