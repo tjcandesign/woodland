@@ -679,7 +679,7 @@ a { color: inherit; }
   .step-num { font-size: 40px; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .nav-toggle { display: inline-block; }
   .top-nav {
     display: none;
