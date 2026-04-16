@@ -230,13 +230,7 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 28px;
   color: #FCFAF6;
 }
-.hero-divider {
-  width: 72px;
-  height: 2px;
-  background: var(--gold);
-  margin-bottom: 28px;
-  border: none;
-}
+.hero-divider { display: none; }
 .hero-sub {
   font-family: var(--serif);
   font-size: 20px;
