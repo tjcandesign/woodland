@@ -816,18 +816,17 @@ img { display: block; max-width: 100%; height: auto; }
    ─────────────────────────────────────────────── */
 
 .footer {
-  background: var(--brown-deep);
+  background: var(--navy-deep);
   color: rgba(255,255,255,0.58);
   padding: 72px 56px 36px;
   font-size: 14px;
 }
 .footer-inner {
   max-width: var(--content-max);
-  margin: 0 auto;
+  margin: 0 0 56px;
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
   gap: 56px;
-  margin-bottom: 56px;
 }
 .footer-col h5 {
   font-family: var(--sans);
