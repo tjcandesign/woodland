@@ -419,10 +419,11 @@ img { display: block; max-width: 100%; height: auto; }
   font-family: var(--serif);
   font-size: 26px;
   font-style: italic;
-  line-height: 1.45;
+  line-height: 1.4;
   color: var(--text-dark);
   margin-bottom: 32px;
   max-width: 760px;
+  letter-spacing: -0.4px;
 }
 .section-dark .lede { color: rgba(255,255,255,0.92); }
 
