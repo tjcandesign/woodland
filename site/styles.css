@@ -365,6 +365,8 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: 200px;
   height: auto;
   display: block;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
 }
 @media (min-width: 720px) {
   .underwriter-seals {
