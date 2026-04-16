@@ -979,10 +979,14 @@ img { display: block; max-width: 100%; height: auto; }
   .section h3 { font-size: 26px; }
   .value-block h3 { font-size: 28px; }
   .utility-region > h3 { font-size: 28px; }
-  .pull-quote { font-size: 24px; padding-left: 20px; }
+  .pull-quote { font-size: 24px; }
   .lede { font-size: 22px; }
   .cta-band h2 { font-size: 32px; }
   .cta-band p { font-size: 18px; }
+
+  .split { grid-template-columns: 1fr; gap: 40px; }
+  .split-aside { padding-top: 0; }
+  .statement { padding-block: 80px; }
 }
 
 @media (max-width: 640px) {
