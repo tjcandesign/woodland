@@ -1008,7 +1008,6 @@ img { display: block; max-width: 100%; height: auto; }
   transform: rotate(var(--spin, 0deg));
   transform-origin: 50% 50%;
   will-change: transform;
-  transition: transform 120ms linear;
 }
 .footer-brand p {
   font-family: var(--serif);
