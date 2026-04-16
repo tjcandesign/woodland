@@ -193,10 +193,15 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .hero-bg {
   position: absolute;
-  inset: 0;
+  top: -25%;
+  left: 0;
+  right: 0;
+  bottom: -25%;
   background: url('../assets/eastern-market.jpeg') center 35% / cover no-repeat;
   z-index: 0;
   filter: saturate(0.85);
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+  will-change: transform;
 }
 .hero-overlay {
   position: absolute;
