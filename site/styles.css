@@ -330,14 +330,14 @@ img { display: block; max-width: 100%; height: auto; }
    ─────────────────────────────────────────────── */
 
 .section {
-  padding: 110px 56px;
+  padding: 110px var(--gutter);
 }
 .section-inner {
   max-width: var(--content-max);
-  margin: 0;
+  margin: 0 auto;
 }
-.section-inner.narrow { max-width: var(--content-narrow); }
-.section-inner.reading { max-width: var(--content-reading); }
+.section-inner.narrow { max-width: var(--content-narrow); margin: 0 auto; }
+.section-inner.reading { max-width: var(--content-reading); margin: 0 auto; }
 
 .section-alt { background: var(--bg-white); }
 .section-dark { background: var(--bg-dark); color: var(--text-white); }
