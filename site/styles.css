@@ -219,16 +219,7 @@ img { display: block; max-width: 100%; height: auto; }
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-bottom: 32px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-.hero-tag::before {
-  content: '';
-  width: 24px;
-  height: 1.5px;
-  background: var(--gold);
-  display: inline-block;
+  display: block;
 }
 .hero h1 {
   font-family: var(--serif);
