@@ -371,17 +371,18 @@ img { display: block; max-width: 100%; height: auto; }
   z-index: 1;
 }
 .section-image .section-inner { position: relative; z-index: 2; }
-.section-image .section-tag { color: var(--gold-soft); }
-.section-image h2 {
+.section.section-image .section-tag { color: var(--gold-soft); }
+.section.section-image h2 {
   color: #FCFAF6;
   font-style: italic;
 }
-.section-image p { color: rgba(255,255,255,0.86); }
-.section-image .btn-outline {
+.section.section-image h3 { color: #FCFAF6; }
+.section.section-image p { color: rgba(255,255,255,0.86); }
+.section.section-image .btn-outline {
   color: #FCFAF6;
   border-color: rgba(255,255,255,0.6);
 }
-.section-image .btn-outline:hover {
+.section.section-image .btn-outline:hover {
   background: var(--gold);
   border-color: var(--gold);
   color: var(--navy-dark);
