@@ -519,7 +519,7 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: 400;
   color: var(--sage-dark);
   margin-bottom: 18px;
-  letter-spacing: -0.1px;
+  letter-spacing: -0.7px;
   text-transform: lowercase;
 }
 .card p {
