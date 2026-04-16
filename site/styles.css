@@ -876,12 +876,17 @@ img { display: block; max-width: 100%; height: auto; }
 .cta-band {
   background: var(--bg-dark);
   color: var(--text-white);
-  padding: 96px var(--gutter);
+  padding: 180px var(--gutter);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   position: relative;
   overflow: hidden;
   isolation: isolate;
 }
+.cta-band h2 { font-size: clamp(40px, 4.2vw, 58px); }
 .cta-band::before {
   content: '';
   position: absolute;
