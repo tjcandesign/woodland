@@ -474,35 +474,37 @@ img { display: block; max-width: 100%; height: auto; }
 .check-list {
   list-style: none;
   padding: 0;
-  margin: 28px 0 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 .check-list li {
   position: relative;
-  padding: 16px 0 16px 40px;
-  border-top: 1px solid var(--border);
-  font-family: var(--serif);
-  font-size: 19px;
+  padding: 0 0 0 32px;
+  font-family: var(--sans);
+  font-size: 16px;
   color: var(--text-dark);
-  line-height: 1.5;
+  line-height: 1.55;
   font-weight: 400;
 }
-.check-list li:last-child { border-bottom: 1px solid var(--border); }
 .check-list li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 1.5px;
-  background: var(--gold);
+  top: 7px;
+  width: 14px;
+  height: 10px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='none'><path d='M1 5.2L4.8 9 13 1' stroke='%23B8860B' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .section-dark .check-list li {
   color: rgba(255,255,255,0.92);
-  border-top-color: rgba(255,255,255,0.14);
 }
-.section-dark .check-list li:last-child { border-bottom-color: rgba(255,255,255,0.14); }
-.section-dark .check-list li::before { background: var(--accent); }
+.section-dark .check-list li::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='none'><path d='M1 5.2L4.8 9 13 1' stroke='%23D4A13A' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
 
 /* ───────────────────────────────────────────────
    GRID & CARDS
