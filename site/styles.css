@@ -425,19 +425,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .section-dark .lede { color: rgba(255,255,255,0.92); }
 
-.divider {
-  width: 56px;
-  height: 2px;
-  background: var(--gold);
-  margin: 40px 0;
-  border: none;
-}
-.section-dark .divider { background: var(--accent); }
-
-.divider-center {
-  margin-left: auto;
-  margin-right: auto;
-}
+.divider { display: none; }
 
 /* ───────────────────────────────────────────────
    PULL QUOTE
@@ -448,16 +436,14 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: 34px;
   font-style: italic;
   line-height: 1.4;
-  color: var(--brown);
-  border-left: 2px solid var(--gold);
-  padding: 4px 0 4px 28px;
-  margin: 44px 0;
+  color: var(--sage-dark);
+  padding: 0;
+  margin: 36px 0;
   max-width: 820px;
   font-weight: 400;
 }
 .section-dark .pull-quote {
   color: var(--gold-soft);
-  border-left-color: var(--accent);
 }
 
 /* ───────────────────────────────────────────────
