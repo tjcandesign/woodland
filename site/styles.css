@@ -410,7 +410,7 @@ img { display: block; max-width: 100%; height: auto; }
   text-transform: uppercase;
   color: var(--text-soft);
 }
-.process-mini-card h3 {
+.section .process-mini-card h3 {
   font-family: var(--serif);
   font-style: normal;
   font-weight: 500;
@@ -418,6 +418,7 @@ img { display: block; max-width: 100%; height: auto; }
   line-height: 1.2;
   color: var(--text-dark);
   margin: 0;
+  letter-spacing: -0.3px;
 }
 .process-mini-card p {
   font-family: var(--sans);
