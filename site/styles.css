@@ -867,15 +867,15 @@ img { display: block; max-width: 100%; height: auto; }
    ─────────────────────────────────────────────── */
 
 @media (max-width: 1100px) {
-  .top-header { padding: 18px 32px; }
+  .top-header { padding-block: 18px; }
   .top-nav { gap: 24px; }
-  .hero { padding: 120px 32px 90px; min-height: 500px; }
+  .hero { padding-block: 120px 90px; min-height: 500px; }
   .hero h1 { font-size: 52px; }
-  .hero.hero-compact { padding: 90px 32px 60px; min-height: 280px; }
+  .hero.hero-compact { padding-block: 90px 60px; min-height: 280px; }
   .hero.hero-compact h1 { font-size: 40px; }
-  .section { padding: 88px 32px; }
-  .cta-band { padding: 80px 32px; }
-  .footer { padding: 60px 32px 32px; }
+  .section { padding-block: 88px; }
+  .cta-band { padding-block: 80px; }
+  .footer { padding-block: 60px 32px; }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 
