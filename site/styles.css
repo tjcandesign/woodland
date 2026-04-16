@@ -767,8 +767,8 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: 400;
   color: var(--text-white);
   margin: 0 auto 18px;
-  line-height: 1.2;
-  letter-spacing: -0.3px;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
   max-width: 720px;
 }
 .cta-band p {
