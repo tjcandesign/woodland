@@ -367,19 +367,9 @@ img { display: block; max-width: 100%; height: auto; }
   text-transform: uppercase;
   color: var(--text-soft);
   margin-bottom: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-.section-tag::before {
-  content: '';
-  width: 14px;
-  height: 1px;
-  background: var(--sage-soft);
-  display: inline-block;
+  display: block;
 }
 .section-dark .section-tag { color: rgba(255,255,255,0.6); }
-.section-dark .section-tag::before { background: var(--gold-soft); }
 
 .section h2 {
   font-family: var(--serif);
