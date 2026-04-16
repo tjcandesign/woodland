@@ -342,7 +342,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .section-inner {
   max-width: var(--content-max);
-  margin: 0 auto;
+  margin: 0;
 }
 .section-inner.narrow { max-width: var(--content-narrow); }
 .section-inner.reading { max-width: var(--content-reading); }
