@@ -1610,8 +1610,10 @@ a.work-card:hover {
 
 @media (max-width: 960px) {
   .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .install-grid { grid-template-columns: 1fr; gap: 28px; }
+  .install-grid,
+  .install-grid-3 { grid-template-columns: 1fr; gap: 28px; }
   .install-tools { grid-template-columns: 1fr; gap: 24px; }
+  .install-sample { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .work-grid { grid-template-columns: 1fr; }
