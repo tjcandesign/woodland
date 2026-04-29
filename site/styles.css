@@ -1575,6 +1575,20 @@ a.work-card:hover {
   font-style: italic;
   margin: 14px 0 0;
 }
+.calc-summary-title {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 22px 0 6px;
+}
+.calc-summary { padding-top: 0; border-top: 0; }
+.calc-summary .calc-out-row { font-size: 14px; }
+.calc-summary .calc-out-row dd { font-size: 16px; }
+.calc-summary .calc-out-total { padding-top: 10px; }
+.calc-summary .calc-out-total dd { font-size: 22px; }
 
 .install-diagram {
   margin: 0;
