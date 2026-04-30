@@ -1745,6 +1745,8 @@ a.work-card:hover {
 }
 @media (max-width: 640px) {
   .work-grid { grid-template-columns: 1fr; }
+  .work-grid-feature .work-card-feature { grid-column: span 1; }
+  .work-card-included li { grid-template-columns: 1fr; gap: 4px; }
   .calc-grid { grid-template-columns: 1fr; }
   .calc-head { flex-direction: column; align-items: flex-start; }
 }
