@@ -1725,6 +1725,10 @@ a.work-card:hover {
 .work-card-large {
   padding: 36px 34px 38px;
   gap: 14px;
+  border: 1px solid var(--border);
+}
+.work-card-large.work-card-with-preview {
+  padding: 28px;
 }
 .report-page .section .work-card-large h3 {
   font-size: clamp(28px, 2.4vw, 34px);
