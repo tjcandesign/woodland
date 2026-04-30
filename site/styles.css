@@ -1786,6 +1786,7 @@ a.work-card:hover {
 
 @media (max-width: 960px) {
   .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work-grid-pair { grid-template-columns: 1fr; }
   .install-row { grid-template-columns: 1fr; gap: 20px; }
   .install-row-media { min-height: 220px; }
   .install-tools { grid-template-columns: 1fr; gap: 24px; }
