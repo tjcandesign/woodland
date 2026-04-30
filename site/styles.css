@@ -1779,7 +1779,9 @@ a.work-card:hover {
   gap: 14px;
   border: 1px solid var(--border);
 }
-.work-card-large.work-card-with-preview {
+.work-card-large.work-card-with-preview,
+.report-page .work-card-with-preview,
+.work-card-feature.work-card-with-preview {
   padding: 28px;
 }
 .report-page .section .work-card-large h3 {
