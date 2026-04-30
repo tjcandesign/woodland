@@ -1648,10 +1648,10 @@ a.work-card:hover {
 /* Wide card with embedded site preview on the left */
 .work-card-with-preview {
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) 1fr;
-  gap: 32px;
+  grid-template-columns: minmax(240px, 0.85fr) 1fr;
+  gap: 56px;
   align-items: stretch;
-  padding: 24px;
+  padding: 28px;
 }
 .work-card-with-preview-body {
   display: flex;
