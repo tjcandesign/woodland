@@ -1717,7 +1717,7 @@ a.work-card:hover {
   height: 900px;
   border: 0;
   pointer-events: none;
-  transform: scale(0.32);
+  transform: scale(0.26);
   transform-origin: top left;
 }
 
