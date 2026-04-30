@@ -1839,10 +1839,9 @@ h2.work-subsection-title {
   gap: 14px;
 }
 .work-card-included li {
-  display: grid;
-  grid-template-columns: minmax(180px, 220px) 1fr;
-  gap: 18px;
-  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .work-card-included .incl-tag {
   font-family: var(--sans);
@@ -1854,8 +1853,8 @@ h2.work-subsection-title {
 }
 .work-card-included .incl-text {
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.5;
   color: var(--text-dark);
 }
 
