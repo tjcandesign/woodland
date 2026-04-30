@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Direction — Woodland Estate &amp; Title</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brown: #5C4033;
+    --brown-dark: #3A2820;
+    --navy: #1B365D;
+    --navy-dark: #0F2240;
+    --gold: #B8860B;
+    --gold-dark: #8A6508;
+    --gold-soft: #D4A93D;
+    --sage: #7D8A6A;
+    --sage-dark: #5F6C4E;
+    --sage-soft: #A4AF93;
+    --bg-cream: #F2EADD;
+    --bg-paper: #F7F2E8;
+    --bg-white: #FDFAF4;
+    --bg-dark: #0F2240;
+    --bg-warm: #ECE3D3;
+    --text-dark: #3C342B;
+    --text-medium: #5A5146;
+    --text-soft: #7D7568;
+    --text-light: #9E9788;
+    --text-white: #FFFFFF;
+    --border: #DED3C0;
+    --border-strong: #C2B8A1;
+    --green: #4F7A4F;
+    --green-bg: rgba(79, 122, 79, 0.10);
+    --yellow: #B58A1B;
+    --yellow-bg: rgba(181, 138, 27, 0.12);
+    --orange: #B25A1F;
+    --orange-bg: rgba(178, 90, 31, 0.10);
+    --red: #9B2323;
+    --red-bg: rgba(155, 35, 35, 0.08);
+    --serif: 'EB Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --content-max: 1100px;
+    --gutter: max(clamp(24px, 4vw, 56px), calc((100vw - var(--content-max)) / 2));
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─── */
+  .top-header {
+    background: var(--bg-dark);
+    padding: 20px var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-header img { height: 36px; }
+  .top-header-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 80px var(--gutter) 64px;
+    background: var(--bg-dark);
+    color: var(--text-white);
+  }
+  .hero-inner { max-width: var(--content-max); }
+  .hero-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  /* ─── PULSE STATS ─── */
+  .pulse {
+    padding: 0 var(--gutter);
+    margin-top: -32px;
+    position: relative;
+    z-index: 2;
+  }
+  .pulse-inner {
+    max-width: var(--content-max);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .pulse-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(15,34,64,0.06);
+  }
+  .pulse-value {
+    font-family: var(--sans);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .pulse-value.done { color: var(--green); }
+  .pulse-value.progress { color: var(--gold); }
+  .pulse-value.input { color: var(--orange); }
+  .pulse-value.pending { color: var(--text-light); }
+  .pulse-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    padding: 72px var(--gutter);
+    border-bottom: 1px solid var(--border);
+  }
+  .section-inner { max-width: var(--content-max); }
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--sage-dark);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-medium);
+    max-width: 680px;
+    margin-bottom: 32px;
+  }
+  .section-alt { background: var(--bg-white); }
+
+  /* ─── TIMELINE RIVER ─── */
+  .river {
+    position: relative;
+    padding-left: 48px;
+  }
+  .river::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--green), var(--gold) 50%, var(--text-light) 85%);
+    border-radius: 1px;
+  }
+  .river-phase {
+    position: relative;
+    margin-bottom: 48px;
+  }
+  .river-phase:last-child { margin-bottom: 0; }
+  .river-dot {
+    position: absolute;
+    left: -48px;
+    top: 4px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    color: white;
+    z-index: 1;
+  }
+  .river-dot.done { background: var(--green); }
+  .river-dot.progress { background: var(--gold); }
+  .river-dot.pending { background: var(--text-light); }
+  .river-phase-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+  .river-phase-status {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .status-done { color: var(--green); }
+  .status-progress { color: var(--gold); }
+  .status-pending { color: var(--text-light); }
+
+  /* ─── DELIVERABLE CARDS ─── */
+  .del-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .del {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+    transition: border-color 0.2s, transform 0.15s var(--ease);
+  }
+  .del:hover { border-color: var(--sage); transform: translateY(-1px); }
+  .del-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+  .del-desc {
+    font-size: 13px;
+    color: var(--text-medium);
+    line-height: 1.5;
+  }
+  .del-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .badge-done { background: var(--green-bg); color: var(--green); }
+  .badge-progress { background: var(--yellow-bg); color: var(--yellow); }
+  .badge-input { background: var(--orange-bg); color: var(--orange); border: 1.5px solid var(--orange); }
+  .badge-pending { background: rgba(158,151,136,0.12); color: var(--text-soft); }
+  .badge-review { background: var(--red-bg); color: var(--red); border: 1.5px solid var(--red); }
+
+  /* ─── INPUT NEEDED SECTION ─── */
+  .input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .input-card {
+    background: var(--bg-white);
+    border: 2px solid var(--orange);
+    border-radius: 14px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .input-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--gold-soft));
+  }
+  .input-card-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .input-card h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+  }
+  .input-card p {
+    font-size: 14px;
+    color: var(--text-medium);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+  .input-card .input-why {
+    font-size: 13px;
+    color: var(--sage-dark);
+    font-style: italic;
+    border-left: 2px solid var(--sage-soft);
+    padding-left: 12px;
+    margin-top: 12px;
+  }
+
+  /* ─── DESIGN DIRECTION MAP ─── */
+  .direction-map {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .dir-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    transition: border-color 0.2s;
+  }
+  .dir-card:hover { border-color: var(--sage); }
+  .dir-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .dir-card h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--brown);
+    margin-bottom: 8px;
+  }
+  .dir-card p {
+    font-size: 14px;
+    color: var(--text-medium);
+    line-height: 1.65;
+  }
+  .dir-card ul {
+    margin-top: 12px;
+    padding-left: 18px;
+  }
+  .dir-card li {
+    font-size: 13px;
+    color: var(--text-medium);
+    margin: 4px 0;
+  }
+
+  /* ─── DECISIONS SECTION ─── */
+  .decision-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .decision-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    padding: 16px 20px;
+    border-bottom: 2px solid var(--border);
+    background: var(--bg-paper);
+  }
+  .decision-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-dark);
+    vertical-align: top;
+  }
+  .decision-table tr:last-child td { border-bottom: 0; }
+  .decision-table .decision-q {
+    font-weight: 600;
+    color: var(--brown);
+  }
+  .decision-table .decision-context {
+    font-size: 13px;
+    color: var(--text-medium);
+    line-height: 1.6;
+  }
+  .decision-table .decision-impact {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .impact-high { color: var(--red); }
+  .impact-med { color: var(--yellow); }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    padding: 24px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-dark);
+    margin: 28px 0;
+  }
+  .callout strong { font-weight: 600; }
+  .callout-warm {
+    background: var(--bg-warm);
+    border-left: 3px solid var(--gold);
+  }
+  .callout-sage {
+    background: rgba(95,108,78,0.08);
+    border-left: 3px solid var(--sage);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--bg-dark);
+    padding: 48px var(--gutter);
+    text-align: center;
+  }
+  .footer-mark {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: rgba(255,255,255,0.15);
+    margin-bottom: 12px;
+  }
+  .footer-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.5px;
+  }
+  .footer-text a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .pulse-inner { grid-template-columns: 1fr 1fr; }
+    .direction-map { grid-template-columns: 1fr; }
+    .input-grid { grid-template-columns: 1fr; }
+    .decision-table { font-size: 13px; }
+    .decision-table th, .decision-table td { padding: 12px 14px; }
+  }
+  @media (max-width: 480px) {
+    .pulse-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <div class="top-header">
+    <img src="../assets/woodland-stacked-white.svg" alt="Woodland Estate &amp; Title">
+    <span class="top-header-tag">Design Direction &mdash; 2026</span>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">WRKHRS &times; Woodland Title</div>
+      <h1>Design direction,<br>at a glance.</h1>
+      <p class="hero-sub">A map of every design thread in play this year &mdash; what&rsquo;s shipped, what&rsquo;s in motion, and the specific decisions that need your input to move forward.</p>
+    </div>
+  </header>
+
+  <!-- ─── PULSE STATS ─── -->
+  <div class="pulse">
+    <div class="pulse-inner">
+      <div class="pulse-card">
+        <div class="pulse-value done">8</div>
+        <div class="pulse-label">Delivered</div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-value progress">6</div>
+        <div class="pulse-label">In Progress</div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-value input">5</div>
+        <div class="pulse-label">Need Your Input</div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-value pending">3</div>
+        <div class="pulse-label">Upcoming</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 1: ENGAGEMENT TIMELINE ─── -->
+  <section class="section" style="padding-top: 80px;">
+    <div class="section-inner">
+      <div class="section-tag">01 &mdash; Engagement Timeline</div>
+      <h2>Three phases, one trajectory.</h2>
+      <p class="section-desc">The engagement flows from brand foundation through physical touchpoints to digital presence. Here&rsquo;s where every deliverable sits today.</p>
+
+      <div class="river">
+
+        <!-- PHASE 1 -->
+        <div class="river-phase">
+          <div class="river-dot done">1</div>
+          <div class="river-phase-title">Phase 1 &mdash; Brand Foundation</div>
+          <div class="river-phase-status status-done">Complete &middot; Weeks 1&ndash;3</div>
+          <div class="del-grid">
+            <div class="del">
+              <div>
+                <div class="del-name">Brand Language Document</div>
+                <div class="del-desc">Voice, tone, messaging, brand story, core beliefs, character traits, vocabulary. The anchor document for everything else.</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Typography &amp; Color System</div>
+                <div class="del-desc">EB Garamond + Inter pairing. Full palette: brown, navy, gold, sage, cream surfaces. CSS custom properties defined.</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Logo &amp; Mark Library</div>
+                <div class="del-desc">Primary stacked mark, short horizontal lockup, circle mark, W glyph. SVG masters in light and dark variants.</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Voice Guidelines &amp; Key Messages</div>
+                <div class="del-desc">How the brand sounds. Positioning lines, video talking points, vocabulary table (say this, not that).</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Original Strategy Draft (PDF)</div>
+                <div class="del-desc">The origin document before the brand language was developed into the live web page. Kept for reference.</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHASE 2 -->
+        <div class="river-phase">
+          <div class="river-dot progress">2</div>
+          <div class="river-phase-title">Phase 2 &mdash; Touchpoint System</div>
+          <div class="river-phase-status status-progress">Substantially Complete &middot; Outstanding: Office Install</div>
+          <div class="del-grid">
+            <div class="del">
+              <div>
+                <div class="del-name">Business Cards &amp; Stationery</div>
+                <div class="del-desc">Cards, letterhead, envelope set in the brand system.</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Email Signatures</div>
+                <div class="del-desc">Consistent sign-offs across the team.</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Video Execution Plan</div>
+                <div class="del-desc">Repeatable shot list and treatment for short-form video content.</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+            <div class="del" style="border-color: var(--orange);">
+              <div>
+                <div class="del-name">Office Experience Design &mdash; Logo Wall Feature</div>
+                <div class="del-desc">Dimensional cutout of the mark, NE wall by window. Material TBD (brass, blackened steel, or stained wood &mdash; pending vendor quote).</div>
+              </div>
+              <span class="del-badge badge-input">Your Input</span>
+            </div>
+            <div class="del" style="border-color: var(--orange);">
+              <div>
+                <div class="del-name">Office Experience Design &mdash; Hallway Acrylic Prints (&times;2)</div>
+                <div class="del-desc">Edge-polished 1/4" acrylic panels with second-surface print. Stainless standoffs, floating mount. Content selection needed.</div>
+              </div>
+              <span class="del-badge badge-input">Your Input</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Top 40 Recognition Piece</div>
+                <div class="del-desc">Acrylic standoff print: Top 40 page + Washingtonian cover, side by side. 15 &times; 20 in, chrome standoffs.</div>
+              </div>
+              <span class="del-badge badge-progress">Vendor Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHASE 3 -->
+        <div class="river-phase">
+          <div class="river-dot progress">3</div>
+          <div class="river-phase-title">Phase 3 &mdash; Digital Presence &amp; Strategy</div>
+          <div class="river-phase-status status-progress">In Progress &middot; Weeks 5&ndash;8</div>
+          <div class="del-grid">
+            <div class="del">
+              <div>
+                <div class="del-name">Website Refresh</div>
+                <div class="del-desc">New structure, visual system, and story for buyers, sellers, lenders, and agents. All pages built. Open for review.</div>
+              </div>
+              <span class="del-badge badge-review">Review Ready</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Bainbridge Law Page</div>
+                <div class="del-desc">Sister site introducing the Bainbridge Law practice. On brand, complete.</div>
+              </div>
+              <span class="del-badge badge-done">Done</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Google Business Profile Strategy</div>
+                <div class="del-desc">Profile refresh, photo strategy, weekly post cadence, Q&amp;A seeding, review velocity system. Guide complete.</div>
+              </div>
+              <span class="del-badge badge-progress">Guide Done &middot; Execution Pending</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Yelp &amp; Directory Optimization</div>
+                <div class="del-desc">Yelp profile cleanup, bonus directories (BBB, Bing, Apple Maps, LinkedIn, Zillow/Redfin).</div>
+              </div>
+              <span class="del-badge badge-progress">Guide Done &middot; Execution Pending</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">Quarterly Communications Plan</div>
+                <div class="del-desc">3-month repeating cadence: partner check-ins, educational content, video close. Three beats per quarter.</div>
+              </div>
+              <span class="del-badge badge-progress">Plan Done &middot; Q2 Starts Now</span>
+            </div>
+            <div class="del" style="border-color: var(--orange);">
+              <div>
+                <div class="del-name">Professional Photo Shoot</div>
+                <div class="del-desc">Office exterior, closing room, team headshots, neighborhood context. Feeds GBP, Yelp, website, and social. Needs scheduling.</div>
+              </div>
+              <span class="del-badge badge-input">Your Input</span>
+            </div>
+            <div class="del" style="border-color: var(--orange);">
+              <div>
+                <div class="del-name">Website Content &mdash; Team Bios</div>
+                <div class="del-desc">No team bios exist on the site. Biggest credibility gap for the &ldquo;attorney-led&rdquo; positioning. Needs names, roles, and headshots.</div>
+              </div>
+              <span class="del-badge badge-input">Your Input</span>
+            </div>
+            <div class="del">
+              <div>
+                <div class="del-name">CMS Integration (Sanity)</div>
+                <div class="del-desc">Planned migration for content management. Schema mapped in site-content.md. Not yet started.</div>
+              </div>
+              <span class="del-badge badge-pending">Upcoming</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: WHERE YOUR INPUT IS NEEDED ─── -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-tag">02 &mdash; Where Your Input Is Needed</div>
+      <h2>Five decisions only you can make.</h2>
+      <p class="section-desc">These items are blocked or partially blocked waiting on decisions, content, or scheduling that requires your direction. Everything else can move without you.</p>
+
+      <div class="input-grid">
+        <div class="input-card">
+          <div class="input-card-num">Decision 01</div>
+          <h3>Logo Wall Material</h3>
+          <p>The dimensional mark for the NE wall needs a material call: <strong>brass, blackened steel, or stained wood.</strong> Each carries a different tone. Vendor quote is pending on all three &mdash; once you pick a direction, fabrication can begin.</p>
+          <div class="input-why">This sets the physical tone for every client and agent who walks through the door. The material says as much as the mark itself.</div>
+        </div>
+        <div class="input-card">
+          <div class="input-card-num">Decision 02</div>
+          <h3>Hallway Print Content</h3>
+          <p>Two 24&times;36" acrylic panels need graphic content selected. Options: aerial/neighborhood photography, brand typography compositions, or the Savile Row reference imagery from the brand story.</p>
+          <div class="input-why">The hallway is the first thing visitors see &mdash; it bridges the entryway and the closing room. The content should reinforce place and presence.</div>
+        </div>
+        <div class="input-card">
+          <div class="input-card-num">Decision 03</div>
+          <h3>Photo Shoot Scheduling</h3>
+          <p>The professional photo shoot feeds <strong>every other recommendation</strong> in the listing refresh: GBP, Yelp, website team bios, social content. A 2&ndash;3 hour session at the C Street office. Budget: $800&ndash;1,500.</p>
+          <div class="input-why">Until this happens, the listing refresh strategy is a plan without assets. It&rsquo;s the single dependency that unblocks the most downstream work.</div>
+        </div>
+        <div class="input-card">
+          <div class="input-card-num">Decision 04</div>
+          <h3>Team Bios &amp; Headshots</h3>
+          <p>Who should appear on the site? Names, titles, bar admissions, and a 2-sentence bio per person. Headshots come from the photo shoot (Decision 03), but the content can be drafted now.</p>
+          <div class="input-why">Competitors like KVS Title prominently showcase their attorneys. This is the biggest gap in Woodland&rsquo;s &ldquo;attorney-led&rdquo; differentiator.</div>
+        </div>
+        <div class="input-card">
+          <div class="input-card-num">Decision 05</div>
+          <h3>Website Review &amp; Launch</h3>
+          <p>The refreshed site is built and ready for review. All pages are live in the preview environment. Needs a walkthrough, any content corrections, and a launch date.</p>
+          <div class="input-why">The site was started at your direction so the launch wouldn&rsquo;t slip while Phase 2 install timing was being arranged. It&rsquo;s ready when you are.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: DESIGN DIRECTION MAP ─── -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">03 &mdash; Design Principles in Play</div>
+      <h2>The thread that connects everything.</h2>
+      <p class="section-desc">Six design principles guiding every decision across the engagement &mdash; from the logo wall to the meta description.</p>
+
+      <div class="direction-map">
+        <div class="dir-card">
+          <div class="dir-card-icon" style="background: rgba(92,64,51,0.1);">&#127978;</div>
+          <h3>Savile Row, Not Silicon Valley</h3>
+          <p>The brand is modeled on centuries-old London tailoring shops: present but not pushy, building reputation through everyday hard work. No loud marketing, no billboards &mdash; just showing up and doing excellent work.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card-icon" style="background: rgba(95,108,78,0.1);">&#127754;</div>
+          <h3>Be the Undercurrent</h3>
+          <p>Title sits in a unique position: critical to the deal, but when done right, nearly invisible. The design should feel like the underlying current, not the wave. Steady. Assured. Unhurried.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card-icon" style="background: rgba(184,134,11,0.1);">&#128220;</div>
+          <h3>Editorial Warmth</h3>
+          <p>The visual language pairs serif elegance (EB Garamond) with sans-serif clarity (Inter). Warm neutrals, generous whitespace, and italic display headings in sage create a tone that&rsquo;s professional without being cold.</p>
+          <ul>
+            <li>Warm color temperature throughout (no cool grays)</li>
+            <li>Serif for editorial moments, sans for working type</li>
+            <li>Sage green reserved for decorative display headings</li>
+          </ul>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card-icon" style="background: rgba(27,54,93,0.1);">&#127970;</div>
+          <h3>Grounded in Place</h3>
+          <p>Capitol Hill, Eastern Market, the C Street office. The brand is physically rooted in a specific place. Design decisions reinforce local presence &mdash; from the GBP photos to the neighborhood landing pages.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card-icon" style="background: rgba(79,122,79,0.1);">&#128101;</div>
+          <h3>Show, Don&rsquo;t Tell</h3>
+          <p>Demonstrate reliability through actions: the buyer intro call, timely documents, minute-not-hour response times. The design embodies this by letting proof points and reviews speak louder than claims.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card-icon" style="background: rgba(155,35,35,0.08);">&#128736;</div>
+          <h3>Breadth as a Feature</h3>
+          <p>Residential, commercial, agricultural &mdash; DC, Maryland, Virginia. The range is deliberate and unusual for a firm this size. The design communicates this through service pages that don&rsquo;t silo the practice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 4: OPEN DECISIONS ─── -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-tag">04 &mdash; Design Refinements</div>
+      <h2>Smaller calls, still worth making.</h2>
+      <p class="section-desc">These aren&rsquo;t blockers, but they&rsquo;re decisions that would sharpen the output if addressed. They can happen anytime.</p>
+
+      <table class="decision-table">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Context</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="decision-q">Wordmark kerning on the W</td>
+            <td class="decision-context">The &ldquo;W&rdquo; currently turns a bit too far. A small tightening pass would clean up the mark at smaller sizes. Technical adjustment, not a redesign.</td>
+            <td><span class="decision-impact impact-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td class="decision-q">Homepage testimonials: which quotes?</td>
+            <td class="decision-context">261 five-star reviews and none on the site. Need to pick the best 4&ndash;6 quotes that hit the differentiators (attorney-led, responsive, thorough). First name + neighborhood attribution.</td>
+            <td><span class="decision-impact impact-high">High</span></td>
+          </tr>
+          <tr>
+            <td class="decision-q">COVID-19 page: keep or remove?</td>
+            <td class="decision-context">The current site has a COVID-19 safety protocols page. In 2026, this may feel dated. Could retire it or fold any still-relevant info into the process page.</td>
+            <td><span class="decision-impact impact-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td class="decision-q">CMS migration timing</td>
+            <td class="decision-context">Sanity CMS integration is planned and the schema is mapped. When do you want to prioritize the migration vs. launching the static site first?</td>
+            <td><span class="decision-impact impact-high">High</span></td>
+          </tr>
+          <tr>
+            <td class="decision-q">Trust badge bar content</td>
+            <td class="decision-context">Horizontal strip below the hero with logos: Fidelity, Stewart, review count badge, BBB (if applied). Underwriter seals already exist in the footer &mdash; should they also appear above the fold?</td>
+            <td><span class="decision-impact impact-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td class="decision-q">Third Thursday: any branded materials?</td>
+            <td class="decision-context">Deliberately shifted away from printed swag toward personal contact. Confirm this stays the approach, or if a light-touch branded item (coaster, napkin) would complement without overproducing.</td>
+            <td><span class="decision-impact impact-med">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 5: WHAT'S NEXT ─── -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">05 &mdash; What&rsquo;s Next</div>
+      <h2>The sequence that matters.</h2>
+      <p class="section-desc">If you could only do three things in the next two weeks, here&rsquo;s the order that unblocks the most downstream work.</p>
+
+      <div class="callout callout-warm">
+        <strong>1. Schedule the photo shoot.</strong> This is the single dependency that unblocks team bios, GBP photos, Yelp assets, and social content. Everything else waits for this.
+      </div>
+      <div class="callout callout-sage">
+        <strong>2. Draft team bios.</strong> Names, titles, 2 sentences each. Content can be written now, paired with headshots when the shoot happens. Unlocks the biggest credibility gap on the site.
+      </div>
+      <div class="callout callout-warm">
+        <strong>3. Walk through the website refresh.</strong> It&rsquo;s built and waiting. A 30-minute review, flag any corrections, and pick a launch date. The listing refresh strategy is sharper with the new site live.
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-mark">W.</div>
+    <div class="footer-text">Prepared by <a href="https://wrkhrs.co" target="_blank">WRKHRS</a> for Woodland Estate &amp; Title &mdash; April 2026</div>
+  </footer>
+
+</body>
+</html>
