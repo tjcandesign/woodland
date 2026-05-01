@@ -166,16 +166,35 @@ img { display: block; max-width: 100%; height: auto; }
   background: transparent;
   border: 1px solid rgba(255,255,255,0.3);
   color: var(--text-white);
-  padding: 7px 12px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  width: 40px;
+  height: 36px;
+  padding: 0;
   border-radius: 2px;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 .nav-toggle:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.04); }
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 /* ───────────────────────────────────────────────
    HERO
