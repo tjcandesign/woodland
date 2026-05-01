@@ -661,6 +661,15 @@ img { display: block; max-width: 100%; height: auto; }
     width: 28px;
     height: 28px;
   }
+  .underwriter-seals-row {
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .underwriter-seals-row img {
+    max-width: none;
+    max-height: 96px;
+    flex: 0 1 auto;
+  }
 }
 
 .section-image {
