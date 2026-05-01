@@ -628,6 +628,21 @@ img { display: block; max-width: 100%; height: auto; }
   justify-content: center;
   flex-shrink: 0;
 }
+.underwriter-seals-row {
+  width: 100%;
+  margin-top: 40px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: nowrap;
+}
+.underwriter-seals-row img {
+  max-width: none;
+  width: auto;
+  height: auto;
+  max-height: 140px;
+  flex: 0 1 auto;
+}
 @media (max-width: 600px) {
   .underwriter-seals {
     flex-direction: row;
