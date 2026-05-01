@@ -1,3 +1,5 @@
+import './studio.css';
+
 export const metadata = {
   title: 'Woodland Studio',
   robots: 'noindex',
