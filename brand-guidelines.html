@@ -30,9 +30,7 @@
       --serif: 'EB Garamond', Georgia, serif;
       --sans: 'Inter', -apple-system, sans-serif;
       --nav-width: 260px;
-      --content-max: 1300px;
-      --content-narrow: 780px;
-      --gutter: max(clamp(24px, 4vw, 56px), calc((100vw - var(--content-max)) / 2));
+      --content-max: 820px;
     }
 
     html { scroll-behavior: smooth; }
@@ -47,15 +45,14 @@
     /* ─── TOP HEADER ─── */
     .top-header {
       background: var(--bg-dark);
-      padding: 20px var(--gutter);
+      padding: 20px 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .top-header img {
-      height: 44px;
+      height: 14px;
       width: auto;
-      display: block;
     }
     .top-header-tag {
       font-size: 11px;
@@ -69,7 +66,7 @@
     .hero {
       position: relative;
       color: var(--text-white);
-      padding: 140px var(--gutter) 120px;
+      padding: 140px 60px 120px;
       overflow: hidden;
       min-height: 480px;
       display: flex;
@@ -78,7 +75,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('../assets/eastern-market.jpeg') center center / cover no-repeat;
+      background: url('assets/eastern-market.jpeg') center center / cover no-repeat;
       z-index: 0;
     }
     .hero-overlay {
@@ -176,10 +173,10 @@
 
     /* ─── SECTIONS ─── */
     .section {
-      padding: 80px var(--gutter);
+      padding: 80px 60px;
     }
     .section-inner {
-      max-width: var(--content-narrow);
+      max-width: var(--content-max);
       margin: 0 auto;
     }
     .section-alt {
@@ -720,7 +717,7 @@
 
   <!-- ─── TOP HEADER ─── -->
   <div class="top-header">
-    <img src="../assets/woodland-stacked-white.svg" alt="Woodland Estate & Title">
+    <img src="assets/woodland-logo-full.svg" alt="Woodland Estate & Title">
     <div style="display: flex; align-items: center; gap: 20px;">
       <span class="top-header-tag">Brand Guidelines</span>
       <a href="https://woodlandtitleproposal.netlify.app/" target="_blank" style="font-size: 12px; font-weight: 500; color: var(--text-white); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 4px; text-decoration: none; transition: background 0.2s;">Project Proposal</a>
@@ -1076,22 +1073,22 @@
           <div class="download-grid">
             <div class="download-card">
               <div class="download-preview light-bg" style="padding: 24px;">
-                <img src="../assets/woodland-stacked-dark.svg" alt="Woodland Stacked Dark" style="max-height: 80px; max-width: 100%;">
+                <img src="assets/woodland-stacked-dark.svg" alt="Woodland Stacked Dark" style="max-height: 80px; max-width: 100%;">
               </div>
               <div class="download-info">
                 <h4>Dark on Light</h4>
                 <p>SVG, PNG, JPG</p>
-                <a href="../assets/woodland-stacked-dark.svg" download class="download-btn">Download SVG</a>
+                <a href="assets/woodland-stacked-dark.svg" download class="download-btn">Download SVG</a>
               </div>
             </div>
             <div class="download-card">
               <div class="download-preview dark-bg" style="padding: 24px;">
-                <img src="../assets/woodland-stacked-white.svg" alt="Woodland Stacked White" style="max-height: 80px; max-width: 100%;">
+                <img src="assets/woodland-stacked-white.svg" alt="Woodland Stacked White" style="max-height: 80px; max-width: 100%;">
               </div>
               <div class="download-info">
                 <h4>White on Dark</h4>
                 <p>SVG, PNG, JPG</p>
-                <a href="../assets/woodland-stacked-white.svg" download class="download-btn">Download SVG</a>
+                <a href="assets/woodland-stacked-white.svg" download class="download-btn">Download SVG</a>
               </div>
             </div>
           </div>
@@ -1101,22 +1098,22 @@
             <div class="download-grid">
               <div class="download-card">
                 <div class="download-preview light-bg" style="padding: 24px;">
-                  <img src="../assets/woodland-short-dark.svg" alt="Woodland Short Dark" style="max-height: 80px; max-width: 100%;">
+                  <img src="assets/woodland-short-dark.svg" alt="Woodland Short Dark" style="max-height: 80px; max-width: 100%;">
                 </div>
                 <div class="download-info">
                   <h4>Dark on Light</h4>
                   <p>SVG, PNG, JPG</p>
-                  <a href="../assets/woodland-short-dark.svg" download class="download-btn">Download SVG</a>
+                  <a href="assets/woodland-short-dark.svg" download class="download-btn">Download SVG</a>
                 </div>
               </div>
               <div class="download-card">
                 <div class="download-preview dark-bg" style="padding: 24px;">
-                  <img src="../assets/woodland-short-white.svg" alt="Woodland Short White" style="max-height: 80px; max-width: 100%;">
+                  <img src="assets/woodland-short-white.svg" alt="Woodland Short White" style="max-height: 80px; max-width: 100%;">
                 </div>
                 <div class="download-info">
                   <h4>White on Dark</h4>
                   <p>SVG, PNG, JPG</p>
-                  <a href="../assets/woodland-short-white.svg" download class="download-btn">Download SVG</a>
+                  <a href="assets/woodland-short-white.svg" download class="download-btn">Download SVG</a>
                 </div>
               </div>
             </div>
@@ -1127,22 +1124,22 @@
             <div class="download-grid">
               <div class="download-card">
                 <div class="download-preview light-bg" style="padding: 24px;">
-                  <img src="../assets/circle-dark.svg" alt="Circle Logomark Dark" style="max-height: 80px; max-width: 100%;">
+                  <img src="assets/circle-dark.svg" alt="Circle Logomark Dark" style="max-height: 80px; max-width: 100%;">
                 </div>
                 <div class="download-info">
                   <h4>Dark on Light</h4>
                   <p>SVG, PNG, JPG</p>
-                  <a href="../assets/circle-dark.svg" download class="download-btn">Download SVG</a>
+                  <a href="assets/circle-dark.svg" download class="download-btn">Download SVG</a>
                 </div>
               </div>
               <div class="download-card">
                 <div class="download-preview dark-bg" style="padding: 24px;">
-                  <img src="../assets/circle-white.svg" alt="Circle Logomark White" style="max-height: 80px; max-width: 100%;">
+                  <img src="assets/circle-white.svg" alt="Circle Logomark White" style="max-height: 80px; max-width: 100%;">
                 </div>
                 <div class="download-info">
                   <h4>White on Dark</h4>
                   <p>SVG, PNG, JPG</p>
-                  <a href="../assets/circle-white.svg" download class="download-btn">Download SVG</a>
+                  <a href="assets/circle-white.svg" download class="download-btn">Download SVG</a>
                 </div>
               </div>
             </div>
