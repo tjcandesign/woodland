@@ -606,16 +606,21 @@ img { display: block; max-width: 100%; height: auto; }
 }
 @media (max-width: 600px) {
   .underwriter-seals {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 12px;
     text-align: center;
+    flex-wrap: nowrap;
   }
   .underwriter-seals img {
-    max-width: 160px;
+    max-width: 110px;
+    flex: 1 1 0;
+    min-width: 0;
   }
-  .underwriter-seals .seal-check {
-    transform: rotate(90deg);
+  .underwriter-seals .seal-check svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
