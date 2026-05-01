@@ -582,29 +582,40 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .underwriter-seals {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  align-items: flex-start;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .underwriter-seals img {
-  max-width: 200px;
+  max-width: 180px;
+  width: 100%;
   height: auto;
   display: block;
   opacity: 0.55;
   mix-blend-mode: multiply;
+  object-fit: contain;
 }
 .underwriter-seals .seal-check {
   color: var(--sage-dark);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
-@media (min-width: 720px) {
+@media (max-width: 600px) {
   .underwriter-seals {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+  }
+  .underwriter-seals img {
+    max-width: 160px;
+  }
+  .underwriter-seals .seal-check {
+    transform: rotate(90deg);
   }
 }
 
