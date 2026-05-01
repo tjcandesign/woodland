@@ -1279,6 +1279,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .footer-col p:last-child { margin-bottom: 0; }
 .footer-col p.footer-stack { line-height: 1.35; }
+.footer-col p.footer-stack a { display: inline; padding: 0; color: inherit; }
+.footer-col p.footer-stack a:hover { color: var(--text-white); }
 .footer-logo-spin {
   position: relative;
   width: 95px;
