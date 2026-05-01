@@ -1346,20 +1346,33 @@ img { display: block; max-width: 100%; height: auto; }
 @media (max-width: 900px) {
   .nav-toggle { display: inline-flex; }
   .top-nav {
-    display: none;
+    display: flex;
     position: absolute;
     top: 100%;
     right: 0;
     left: 0;
     flex-direction: column;
     background: var(--bg-dark);
+    padding: 0 32px;
+    gap: 0;
+    align-items: flex-start;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    border-top: 1px solid rgba(255,255,255,0);
+    border-bottom: 1px solid rgba(255,255,255,0);
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease, gap 0.35s ease, border-color 0.35s ease;
+    pointer-events: none;
+  }
+  .top-nav.open {
+    max-height: 480px;
+    opacity: 1;
     padding: 20px 32px 26px;
     gap: 14px;
-    align-items: flex-start;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-top-color: rgba(255,255,255,0.08);
+    border-bottom-color: rgba(255,255,255,0.08);
+    pointer-events: auto;
   }
-  .top-nav.open { display: flex; }
   .top-nav a { padding: 4px 0; }
   .top-nav a.active::after { display: none; }
   .top-nav .cta { align-self: stretch; text-align: center; padding: 12px 18px; }
