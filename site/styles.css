@@ -1362,7 +1362,7 @@ img { display: block; max-width: 100%; height: auto; }
   .cta-band h2 { font-size: 32px; }
   .cta-band p { font-size: 18px; }
 
-  .split { grid-template-columns: 1fr; gap: 40px; }
+  .split { grid-template-columns: 1fr; gap: 64px; }
   .split-aside { padding-top: 0; }
   .statement { padding-block: 80px; }
 
