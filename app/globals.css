@@ -1218,7 +1218,7 @@ img { display: block; max-width: 100%; height: auto; }
   content: '';
   position: absolute;
   inset: 0;
-  background: url('assets/map from current website.jpg') center center / cover no-repeat;
+  background: url('/assets/map from current website.jpg') center center / cover no-repeat;
   filter: saturate(0.85);
   z-index: -2;
 }
