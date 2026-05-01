@@ -1780,6 +1780,10 @@ img { display: block; max-width: 100%; height: auto; }
 .work-grid-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+/* Force a card to start a new row (used for the invoices in Records) */
+.invoice-row-start {
+  grid-column-start: 1;
+}
 .work-card {
   display: flex;
   flex-direction: column;
