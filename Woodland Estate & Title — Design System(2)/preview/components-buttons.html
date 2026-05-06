@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; background: #F7F2E8; font-family: 'Inter', sans-serif; padding: 24px; color: #3C342B; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; font-family: 'Inter'; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 14px 24px; border-radius: 2px; border: 1px solid transparent; cursor: pointer; }
+  .btn::after { content: '→'; font-size: 14px; font-weight: 400; }
+  .btn-primary { background: #B8860B; color: #FFF; box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 2px 8px rgba(184,134,11,0.25); }
+  .btn-outline { background: transparent; color: #5C4033; border-color: #C2B8A1; }
+  .btn-ghost { background: transparent; color: #5C4033; padding: 14px 0; }
+  .btn-rounded { border-radius: 16px; }
+  .dark { background: #0F2240; padding: 20px; border-radius: 4px; margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-secondary { background: transparent; color: #FFF; border-color: rgba(255,255,255,0.45); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  .l { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #9E9788; width: 100%; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+  <div class="row"><div class="l">On paper</div>
+    <a class="btn btn-primary">Send Earnest Money</a>
+    <a class="btn btn-outline">View All Services</a>
+    <a class="btn btn-outline btn-rounded">Discover our full process</a>
+    <a class="btn btn-ghost">Learn more</a>
+  </div>
+  <div class="dark">
+    <a class="btn btn-primary">Send Earnest Money</a>
+    <a class="btn btn-secondary">Order Services</a>
+  </div>
+</body>
+</html>

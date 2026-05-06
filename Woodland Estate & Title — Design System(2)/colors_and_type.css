@@ -1,0 +1,290 @@
+/* ───────────────────────────────────────────────
+   WOODLAND ESTATE & TITLE — DESIGN TOKENS
+   Canonical colors + typography for the brand.
+   Mirrors the production site's styles.css.
+   ─────────────────────────────────────────────── */
+
+/* Inter still loads from Google Fonts (no brand file provided). */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* EB Garamond — self-hosted brand files in fonts/ */
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 400 800;
+  font-style: italic;
+  font-display: swap;
+}
+/* Static fallbacks for environments that skip the variable face */
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-Italic.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-MediumItalic.ttf') format('truetype');
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-BoldItalic.ttf') format('truetype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-ExtraBold.ttf') format('truetype');
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800; font-style: italic; font-display: swap;
+}
+
+:root {
+  /* ─── CORE PALETTE ─── */
+  --brown:         #5C4033;  /* warm, grounding; used for small type, outline btns */
+  --brown-dark:    #3A2820;
+  --brown-deep:    #2A1C14;  /* pre-header bar */
+
+  --navy:          #1B365D;
+  --navy-dark:     #0F2240;  /* primary dark surface, header */
+  --navy-deep:     #07162E;  /* footer, deepest surface */
+
+  --gold:          #B8860B;  /* primary CTA, accent strokes */
+  --gold-dark:     #8A6508;  /* hover */
+  --gold-soft:     #D4A93D;  /* eyebrows on dark, lighter gold accents */
+
+  --sage:          #7D8A6A;  /* editorial sage for italic serif heads */
+  --sage-dark:     #5F6C4E;  /* primary italic display color */
+  --sage-soft:     #A4AF93;
+
+  --accent:        #C4A882;  /* warm tan */
+  --accent-dark:   #A68B6B;
+
+  /* ─── SURFACES ─── */
+  --bg-cream:      #F2EADD;
+  --bg-paper:      #F7F2E8;  /* default page bg */
+  --bg-white:      #FDFAF4;  /* section-alt, warm off-white */
+  --bg-pure-white: #FFFFFF;
+  --bg-dark:       #0F2240;  /* = navy-dark; dark section bg */
+  --bg-warm:       #ECE3D3;
+
+  /* ─── TEXT ─── */
+  --text-dark:     #3C342B;  /* body, tuned warm-black */
+  --text-medium:   #5A5146;
+  --text-soft:     #7D7568;
+  --text-light:    #9E9788;
+  --text-white:    #FFFFFF;
+
+  /* ─── LINES ─── */
+  --border:        #DED3C0;
+  --border-strong: #C2B8A1;
+  --border-dark:   rgba(255,255,255,0.12);
+
+  /* ─── TYPE FAMILIES ─── */
+  --serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ─── TYPE TOKENS (semantic) ─── */
+  /* Display — italic serif, sage */
+  --display-1-size:   clamp(48px, 6.2vw, 88px);
+  --display-1-lh:     1.05;
+  --display-1-ls:     -1.5px;
+
+  --h1-size:          48px;   /* compact hero h1 */
+  --h1-lh:            1.1;
+
+  --h2-size:          46px;
+  --h2-lh:            1.12;
+  --h2-ls:            -1.2px;
+
+  --h3-size:          30px;
+  --h3-lh:            1.22;
+  --h3-ls:            -0.8px;
+
+  --h4-size:          22px;
+  --h4-lh:            1.3;
+
+  --body-size:        17px;
+  --body-lh:          1.75;
+
+  --small-size:       14px;
+  --small-lh:         1.6;
+
+  --eyebrow-size:     11px;
+  --eyebrow-track:    3px;   /* tight eyebrow */
+  --eyebrow-track-lg: 4px;   /* wide eyebrow on hero tags */
+
+  /* ─── RHYTHM ─── */
+  --content-max:     1300px;
+  --content-narrow:  780px;
+  --content-reading: 660px;
+  --gutter: max(clamp(24px, 4vw, 56px), calc((100vw - var(--content-max)) / 2));
+
+  /* ─── RADII ─── */
+  --radius-sharp:   2px;   /* buttons, small tags */
+  --radius-soft:    4px;   /* contact blocks */
+  --radius-round:   16px;  /* cards, process-mini cards, aim-card */
+
+  /* ─── SHADOWS ─── */
+  --shadow-card:
+      0 1px 2px rgba(15, 34, 64, 0.04),
+      0 24px 48px rgba(15, 34, 64, 0.06);
+  --shadow-btn-primary:
+      0 1px 0 rgba(255,255,255,0.1) inset,
+      0 2px 8px rgba(184,134,11,0.25);
+  --shadow-btn-primary-hover:
+      0 1px 0 rgba(255,255,255,0.1) inset,
+      0 4px 14px rgba(184,134,11,0.35);
+
+  /* ─── MOTION ─── */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 0.18s;
+  --dur-med:  0.2s;
+  --dur-slow: 0.38s;
+}
+
+/* ───────────────────────────────────────────────
+   SEMANTIC TYPE CLASSES
+   ─────────────────────────────────────────────── */
+
+.wl-display {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: var(--display-1-size);
+  line-height: var(--display-1-lh);
+  letter-spacing: var(--display-1-ls);
+  color: #FCFAF6;
+}
+
+.wl-h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: var(--h1-size);
+  line-height: var(--h1-lh);
+  color: #FCFAF6;
+}
+
+/* The SIGNATURE h2 — italic serif in sage. Used on light sections. */
+.wl-h2 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  letter-spacing: var(--h2-ls);
+  color: var(--sage-dark);
+  max-width: 800px;
+}
+
+.wl-h2--dark {
+  color: #FCFAF6;
+  font-style: normal;
+  letter-spacing: -0.8px;
+}
+
+.wl-h3 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--h3-size);
+  line-height: var(--h3-lh);
+  letter-spacing: var(--h3-ls);
+  color: var(--sage-dark);
+}
+
+.wl-h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  color: var(--brown);
+}
+
+.wl-body {
+  font-family: var(--sans);
+  font-size: var(--body-size);
+  line-height: var(--body-lh);
+  color: var(--text-medium);
+  font-weight: 400;
+}
+
+.wl-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--text-dark);
+  letter-spacing: -0.4px;
+}
+
+.wl-pull-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1.35;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  color: var(--sage-dark);
+}
+
+/* Eyebrow — the all-caps spaced label above every h2 */
+.wl-eyebrow {
+  font-family: var(--sans);
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  letter-spacing: var(--eyebrow-track);
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.wl-eyebrow--gold { color: var(--gold-soft); }
+.wl-eyebrow--muted-on-dark { color: rgba(255,255,255,0.6); }
+
+.wl-small {
+  font-family: var(--sans);
+  font-size: var(--small-size);
+  line-height: var(--small-lh);
+  color: var(--text-soft);
+}
+
+.wl-caption {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: var(--text-light);
+}

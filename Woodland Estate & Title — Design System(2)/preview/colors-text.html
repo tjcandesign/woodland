@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; background: #F7F2E8; font-family: 'Inter', sans-serif; padding: 24px; }
+  .row { display: flex; align-items: center; gap: 16px; padding: 10px 0; border-bottom: 1px solid #DED3C0; }
+  .row:last-child { border-bottom: 0; }
+  .chip { width: 44px; height: 44px; border-radius: 4px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.04); }
+  .name { font-size: 13px; font-weight: 600; color: #3C342B; width: 140px; }
+  .hex { font-size: 12px; color: #7D7568; width: 90px; }
+  .sample { font-size: 14px; }
+  .sample.lg { font-size: 17px; }
+</style>
+</head>
+<body>
+  <div class="row"><div class="chip" style="background:#3C342B"></div><div class="name">Text Dark</div><div class="hex">#3C342B</div><div class="sample lg" style="color:#3C342B">Body — the steady, warm-black default.</div></div>
+  <div class="row"><div class="chip" style="background:#5A5146"></div><div class="name">Text Medium</div><div class="hex">#5A5146</div><div class="sample lg" style="color:#5A5146">Medium — long-form paragraph tone.</div></div>
+  <div class="row"><div class="chip" style="background:#7D7568"></div><div class="name">Text Soft</div><div class="hex">#7D7568</div><div class="sample" style="color:#7D7568">Soft — secondary, meta, helper copy.</div></div>
+  <div class="row"><div class="chip" style="background:#9E9788"></div><div class="name">Text Light</div><div class="hex">#9E9788</div><div class="sample" style="color:#9E9788">Light — labels, eyebrows on paper.</div></div>
+</body>
+</html>

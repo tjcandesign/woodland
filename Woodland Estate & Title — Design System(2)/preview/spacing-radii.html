@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; background: #F7F2E8; font-family: 'Inter', sans-serif; padding: 28px; }
+  .row { display: flex; gap: 22px; align-items: flex-end; }
+  .cell { text-align: center; }
+  .shape { background: #FDFAF4; border: 1px solid #C2B8A1; width: 80px; height: 80px; }
+  .r-sharp { border-radius: 2px; }
+  .r-soft { border-radius: 4px; }
+  .r-round { border-radius: 16px; }
+  .lbl { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #7D7568; margin-top: 10px; }
+  .val { font-size: 11px; color: #9E9788; margin-top: 2px; font-family: 'Inter', monospace; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="cell"><div class="shape r-sharp"></div><div class="lbl">Sharp</div><div class="val">2px · btn, tag</div></div>
+    <div class="cell"><div class="shape r-soft"></div><div class="lbl">Soft</div><div class="val">4px · input, block</div></div>
+    <div class="cell"><div class="shape r-round"></div><div class="lbl">Round</div><div class="val">16px · card, pill</div></div>
+  </div>
+</body>
+</html>
