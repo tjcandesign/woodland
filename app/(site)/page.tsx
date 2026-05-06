@@ -19,7 +19,7 @@ export default function HomePage() {
         <div className="hero-overlay"></div>
         <div className="hero-inner">
           <h1>Personable, transparent,<br />attorney-led property settlements.</h1>
-          <p className="hero-sub">Serving Washington, DC, Virginia, and Maryland, Woodland is a clearing house for buyers, sellers, lenders, and their agents, specializing in complex problem-solving.</p>
+          <p className="hero-sub">Serving Washington, DC, Virginia, and Maryland. A clearing house for buyers, sellers, lenders, and their agents, with particular care for complicated files.</p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
             <a className="btn btn-secondary" href="mailto:woodlandteam@woodlandtitleDC.com">Order Services</a>
