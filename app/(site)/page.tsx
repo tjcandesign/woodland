@@ -5,7 +5,7 @@ import ProcessArrows from '@/components/ProcessArrows';
 
 export const metadata: Metadata = {
   title: 'Woodland Estate & Title — Attorney-Led Property Settlements in DC, Maryland & Virginia',
-  description: 'Personable, transparent, attorney-led property settlements in Washington DC, Virginia and Maryland. A clearing house for buyers, sellers, lenders, and their agents.',
+  description: 'Personable, transparent, attorney-led property settlements in Washington DC, Virginia and Maryland. A clearing house for buyers, sellers, lenders, and their agents, with particular care for complicated files.',
 };
 
 export default function HomePage() {
