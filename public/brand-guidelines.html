@@ -663,21 +663,37 @@
       margin: 0;
       line-height: 1.4;
     }
+    .download-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
     .download-btn {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 12px;
-      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
       color: var(--brown);
       text-decoration: none;
       border: 1px solid var(--border);
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 4px;
-      transition: background 0.2s, border-color 0.2s;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
     .download-btn:hover {
       background: var(--bg-cream);
       border-color: var(--brown);
+      color: var(--text-dark);
+    }
+    .download-meta {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.4px;
+      margin-top: 4px;
     }
 
     /* ─── FOOTER ─── */
