@@ -25,7 +25,7 @@ export default function CodeOfConductPage() {
           <div className="section-tag">Our Tagline</div>
           <h2>How we choose to work.</h2>
           <p className="pull-quote">Process matters. Transparency throughout the settlement process leads to significant savings for the buyer on title insurance premiums.</p>
-          <p>This is not a slogan. It is the standard we hold ourselves to on every file, and the reason our clients return, and send their friends.</p>
+          <p>This is not a slogan. It is the standard we hold ourselves to on every file, and the reason clients return to us, and refer their colleagues and families.</p>
         </div>
       </section>
 
