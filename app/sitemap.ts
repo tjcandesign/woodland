@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 const SITE_URL = 'https://www.woodlandtitledc.com';
 
 // Public, indexable pages only. Internal pages (brand, work, comms-plan,
