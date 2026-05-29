@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export const dynamic = 'force-static';
 
-const SITE_URL = 'https://www.woodlandtitledc.com';
+const SITE_URL = 'https://woodlandtitle.com';
 
 // Note: internal pages (/brand, /brand-guidelines, /work, /comms-plan,
 // /listing-refresh, /project-status) are kept OUT of the sitemap and each
