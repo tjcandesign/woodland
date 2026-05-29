@@ -23,7 +23,7 @@ const TARGET_LONG_EDGE = 1600;
 // the breathing room in the brand-page preview thumbnails. Equal pixel padding on
 // all sides (a fraction of the long edge), applied to both PNG (transparent) and
 // JPG (flat background). The final file grows by 2× this value on each axis.
-const PADDING = Math.round(TARGET_LONG_EDGE * 0.1); // ~160px all sides
+const PADDING = Math.round(TARGET_LONG_EDGE * 0.4); // ~640px all sides
 const NAVY = { r: 15, g: 34, b: 64 }; // matches --bg-dark in brand guidelines
 const WHITE = { r: 255, g: 255, b: 255 };
 
