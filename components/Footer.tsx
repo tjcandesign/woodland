@@ -65,7 +65,7 @@ export default function Footer() {
           <h5>Capitol Hill Office</h5>
           <p><a href="https://maps.google.com/?q=659+C+Street+SE+Washington+DC+20003" target="_blank" rel="noopener">659 C Street, SE<br />Washington, DC 20003</a></p>
           <p className="footer-stack"><a href="tel:2025166855">202.516.6855</a><br />Fax (202) 888-1179</p>
-          <p><a href="mailto:woodlandteam@woodlandtitleDC.com">woodlandteam@woodlandtitleDC.com</a></p>
+          <p><a href="mailto:woodlandteam@woodlandtitle.com">woodlandteam@woodlandtitle.com</a></p>
         </div>
       </div>
       <div className="footer-bottom">

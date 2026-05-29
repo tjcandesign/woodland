@@ -241,7 +241,7 @@ export default function UtilitiesPage() {
         <p>We handle the water service tied to your closing. For everything else, we&apos;re happy to point you in the right direction. Reach out any time.</p>
         <div className="cta-actions">
           <Link className="btn btn-primary" href="/contact">Contact Us</Link>
-          <a className="btn btn-secondary" href="mailto:woodlandteam@woodlandtitleDC.com">Email the Team</a>
+          <a className="btn btn-secondary" href="mailto:woodlandteam@woodlandtitle.com">Email the Team</a>
         </div>
       </section>
     </main>

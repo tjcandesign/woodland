@@ -41,7 +41,7 @@ export default function ContactPage() {
             </div>
             <div className="contact-block">
               <div className="label">Email</div>
-              <p className="value"><a href="mailto:woodlandteam@woodlandtitleDC.com">woodlandteam@woodlandtitleDC.com</a></p>
+              <p className="value"><a href="mailto:woodlandteam@woodlandtitle.com">woodlandteam@woodlandtitle.com</a></p>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function ContactPage() {
           <p>Send earnest money through our secure portal, or email the team to order services. We&apos;ll take it from there.</p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
-            <a className="btn btn-secondary" href="mailto:woodlandteam@woodlandtitleDC.com">Order Services</a>
+            <a className="btn btn-secondary" href="mailto:woodlandteam@woodlandtitle.com">Order Services</a>
           </div>
         </div>
       </section>
