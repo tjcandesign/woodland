@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export const dynamic = 'force-static';
 
-const SITE_URL = 'https://woodlandtitle.com';
+const SITE_URL = 'https://www.woodlandtitle.com';
 
 // Public, indexable pages only. Internal pages (brand, work, comms-plan,
 // listing-refresh, project-status, brand-guidelines) are excluded on purpose.
