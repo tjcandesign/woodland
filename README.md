@@ -47,7 +47,8 @@ Work top to bottom. Items marked **(manual)** need a human with the right access
 - [x] Internal pages carry `noindex` (`/brand`, `/brand-guidelines`, `/work`, `/comms-plan`, `/listing-refresh`, `/project-status`)
 - [x] `robots.txt` + `sitemap.xml` generated; sitemap lists public pages only
 - [x] Logo downloads (SVG/PNG/JPG) live on the brand guidelines page
-- [ ] **(manual)** Qualia widget embed added + brand-tinted before launch (placeholder TODO in code)
+- [x] Qualia quote widget embedded site-wide (`app/(site)/layout.tsx`, via `next/script`)
+- [ ] **(manual, optional)** Brand-tint the Qualia widget colors in the Qualia dashboard to match the palette
 - [ ] **(manual)** Decide final fate of internal pages — keep `noindex`, password-gate, or remove
 
 ## 2. Deploy (Vercel)
