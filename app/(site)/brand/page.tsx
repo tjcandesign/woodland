@@ -1,10 +1,18 @@
-'use client';
+import type { Metadata } from 'next';
 
-import { useEffect } from 'react';
+export const metadata: Metadata = {
+  title: 'Woodland Brand Language',
+  robots: 'noindex, nofollow',
+};
 
-export default function BrandPage() {
-  useEffect(() => {
-    window.location.replace('/brand.html');
-  }, []);
-  return null;
+// Internal page — redirects to the static brand language document.
+// Server component so the noindex tag is emitted into <head> for crawlers.
+export default function BrandRedirect() {
+  return (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: "window.location.replace('/brand.html');",
+      }}
+    />
+  );
 }
