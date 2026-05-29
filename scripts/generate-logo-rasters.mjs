@@ -61,20 +61,30 @@ async function generate(filename) {
   const pngPath = path.join(ASSETS_DIR, `${baseName}.png`);
   const jpgPath = path.join(ASSETS_DIR, `${baseName}.jpg`);
 
-  // PNG: transparent background
-  await sharp(svgBuffer, { density: Math.max(72, Math.ceil(72 * scale)) })
+  // Render the logo once at full size, then pad equally on all sides.
+  const logo = await sharp(svgBuffer, { density: Math.max(72, Math.ceil(72 * scale)) })
     .resize({ width: outW, height: outH, fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .png()
+    .toBuffer();
+
+  const extend = { top: PADDING, bottom: PADDING, left: PADDING, right: PADDING };
+  const finalW = outW + PADDING * 2;
+  const finalH = outH + PADDING * 2;
+
+  // PNG: transparent padding
+  await sharp(logo)
+    .extend({ ...extend, background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png({ compressionLevel: 9 })
     .toFile(pngPath);
 
-  // JPG: flatten onto matching background
-  await sharp(svgBuffer, { density: Math.max(72, Math.ceil(72 * scale)) })
-    .resize({ width: outW, height: outH, fit: 'contain', background: { ...flatBg, alpha: 1 } })
+  // JPG: padding in the matching flat background, then flatten
+  await sharp(logo)
+    .extend({ ...extend, background: { ...flatBg, alpha: 1 } })
     .flatten({ background: flatBg })
     .jpeg({ quality: 92, mozjpeg: true })
     .toFile(jpgPath);
 
-  console.log(`  ${baseName} → PNG (${outW}×${outH}, transparent), JPG (${outW}×${outH}, ${isWhiteOnDark ? 'navy' : 'white'} bg)`);
+  console.log(`  ${baseName} → PNG (${finalW}×${finalH}, transparent +${PADDING}px), JPG (${finalW}×${finalH}, ${isWhiteOnDark ? 'navy' : 'white'} bg +${PADDING}px)`);
 }
 
 console.log(`Generating logo rasters into ${ASSETS_DIR}…`);
