@@ -1,12 +1,18 @@
-'use client';
+import type { Metadata } from 'next';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+export const metadata: Metadata = {
+  title: 'Project Progress — Woodland Estate & Title',
+  robots: 'noindex, nofollow',
+};
 
-export default function ProjectStatusPage() {
-  const router = useRouter();
-  useEffect(() => {
-    router.replace('/work');
-  }, [router]);
-  return null;
+// Internal page — redirects to the project progress page.
+// Server component so the noindex tag is emitted into <head> for crawlers.
+export default function ProjectStatusRedirect() {
+  return (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: "window.location.replace('/work/');",
+      }}
+    />
+  );
 }
