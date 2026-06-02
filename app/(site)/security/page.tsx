@@ -86,7 +86,7 @@ export default async function SecurityPage() {
         <h2>Questions about security?</h2>
         <p>Before you wire funds or share sensitive documents, call us to verify instructions. We&apos;d rather you double-check than take a chance.</p>
         <div className="cta-actions">
-          <a className="btn btn-primary" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
+          <a className="btn btn-primary" href={settings.earnestMoneyUrl} target="_blank" rel="noopener">Send Earnest Money</a>
           <Link className="btn btn-secondary" href="/contact">Contact Us</Link>
         </div>
       </section>
