@@ -61,7 +61,7 @@ export const UTILITIES: UtilityRegion[] = [
         { provider: 'Water & Sewer', linkLabel: 'Water and Sewer Billing' },
       ]},
       { county: 'Frederick County', providers: [
-        { provider: 'Frequency Gas', linkLabel: 'Washington Gas, Frederick Division' },
+        { provider: 'Frederick Gas', linkLabel: 'Washington Gas, Frederick Division' },
         { provider: 'Water Dept.', linkLabel: 'Water and Sewer Utilities' },
         { provider: 'Washington Gas', linkLabel: 'Start and Stop Service' },
       ]},
