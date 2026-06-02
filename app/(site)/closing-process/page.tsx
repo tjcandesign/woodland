@@ -1,22 +1,46 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { getClosingSteps, getPage, getSiteSettings } from '@/lib/sanity/content';
+import PortableBody from '@/components/PortableBody';
 
-export const metadata: Metadata = {
-  title: 'The Closing Process — Woodland Estate & Title',
-  description: 'Three deliberate phases — title search, title insurance, and escrow — that protect your property rights, your investment, and your peace of mind.',
+const HERO_FALLBACK = {
+  title: 'The Closing Process',
+  metaDescription:
+    'Three deliberate phases — title search, title insurance, and escrow — that protect your property rights, your investment, and your peace of mind.',
+  hero: {
+    tag: 'The Closing Process',
+    heading: 'The Closing Process',
+    sub: 'Three deliberate phases that protect your property rights, your investment, and your peace of mind.',
+    compact: true,
+  },
 };
 
-export default function ClosingProcessPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage('closing-process', HERO_FALLBACK);
+  return {
+    title: `${page.title} — Woodland Estate & Title`,
+    description: page.metaDescription,
+  };
+}
+
+export default async function ClosingProcessPage() {
+  const [steps, page, settings] = await Promise.all([
+    getClosingSteps(),
+    getPage('closing-process', HERO_FALLBACK),
+    getSiteSettings(),
+  ]);
+  const hero = page.hero || HERO_FALLBACK.hero;
+
   return (
     <main>
       <section className="hero hero-compact">
         <div className="hero-bg"></div>
         <div className="hero-overlay"></div>
         <div className="hero-inner">
-          <div className="hero-tag">The Closing Process</div>
-          <h1>The Closing Process</h1>
+          {hero.tag && <div className="hero-tag">{hero.tag}</div>}
+          <h1>{hero.heading}</h1>
           <div className="hero-divider"></div>
-          <p className="hero-sub">Three deliberate phases that protect your property rights, your investment, and your peace of mind.</p>
+          <p className="hero-sub">{hero.sub}</p>
         </div>
       </section>
 
@@ -35,35 +59,16 @@ export default function ClosingProcessPage() {
           <div className="section-tag">The Three Phases</div>
           <h2>From search to settlement.</h2>
 
-          <div className="step">
-            <div className="step-num">01</div>
-            <div className="step-body">
-              <h3>Title Search</h3>
-              <div className="step-subhead">Ensuring Your Property Rights</div>
-              <p>We order and rigorously review the title history, and resolve any defects prior to closing, so you can enjoy your property free of any encumbrances.</p>
-              <p>We arrange property surveys to clarify exact boundaries and confirm no other party holds claims to the property.</p>
+          {steps.map((step, i) => (
+            <div className="step" key={step._id}>
+              <div className="step-num">{String(step.order ?? i + 1).padStart(2, '0')}</div>
+              <div className="step-body">
+                <h3>{step.title}</h3>
+                {step.subhead && <div className="step-subhead">{step.subhead}</div>}
+                <PortableBody value={step.body} />
+              </div>
             </div>
-          </div>
-
-          <div className="step">
-            <div className="step-num">02</div>
-            <div className="step-body">
-              <h3>Title Insurance</h3>
-              <div className="step-subhead">Guaranteeing Future Property Claims</div>
-              <p>Title insurance protects both you and your lender against any obstacles to clear and confident ownership.</p>
-              <p>Lenders require a one-time policy; homeowners may purchase additional coverage against future claims.</p>
-            </div>
-          </div>
-
-          <div className="step">
-            <div className="step-num">03</div>
-            <div className="step-body">
-              <h3>Escrow</h3>
-              <div className="step-subhead">Holding The Settlement Funds in Trust &amp; Disbursement</div>
-              <p>Once a contract is signed, the buyer produces earnest money, which we hold in trust through closing.</p>
-              <p>At settlement, we disburse those funds according to the contract: paying off existing liens, settling taxes and utilities, covering recording fees, and delivering the proceeds to the seller. Your lender produces a Closing Disclosure with the final figures at least three days before settlement, and we walk you through every line so nothing arrives as a surprise at the table.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -80,7 +85,7 @@ export default function ClosingProcessPage() {
         <h2>Ready to close with confidence?</h2>
         <p>Whether you&apos;re a buyer, seller, lender, or agent, expect a quick response and straightforward answers.</p>
         <div className="cta-actions">
-          <a className="btn btn-primary" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
+          <a className="btn btn-primary" href={settings.earnestMoneyUrl} target="_blank" rel="noopener">Send Earnest Money</a>
           <Link className="btn btn-secondary" href="/contact">Contact Us</Link>
         </div>
       </section>
