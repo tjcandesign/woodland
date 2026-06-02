@@ -81,11 +81,27 @@ export default function Header({ nav }: { nav: NavLink[] }) {
         <span className="nav-toggle-bar"></span>
       </button>
       <nav className={`top-nav${navOpen ? ' open' : ''}`}>
-        <Link href="/services">Services</Link>
-        <Link href="/closing-process">Closing Process</Link>
-        <Link href="/code-of-conduct">Code of Conduct</Link>
-        <Link href="/contact">Contact</Link>
-        <a className="cta" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
+        {nav.map((link) =>
+          link.external ? (
+            <a
+              key={link.href + link.label}
+              className={link.cta ? 'cta' : undefined}
+              href={link.href}
+              target="_blank"
+              rel="noopener"
+            >
+              {link.label}
+            </a>
+          ) : (
+            <Link
+              key={link.href + link.label}
+              className={link.cta ? 'cta' : undefined}
+              href={link.href}
+            >
+              {link.label}
+            </Link>
+          )
+        )}
       </nav>
     </header>
   );
