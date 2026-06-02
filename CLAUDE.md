@@ -66,7 +66,7 @@ name, not a nature brand. Keep motion subtle. Don't make it salesy / influencer-
 1. **Wire DNS** for `woodlandtitle.com` in GoDaddy → site goes live (README.md has exact steps).
 2. **Fix git email:** `git config user.email "tj@wrkhrs.co"`.
 3. **Confirm the `woodlandteam@woodlandtitle.com` mailbox exists** (footer/contact email was switched from the `-dc` domain; mail will bounce if the box isn't provisioned). Note: `Send Earnest Money` still points at `woodlandtitledc.paymints.io` — left as-is intentionally; confirm that's still correct.
-4. **Phase 3 — Sanity:** replace hardcoded page content with GROQ queries; wire publish → Vercel deploy hook. Plan in SANITY-HANDOFF.md.
+4. **Phase 3 — Sanity:** ✅ pages wired to GROQ with fallbacks. **Remaining:** (a) add `SANITY_WRITE_TOKEN` to `.env.local` and run the two seed scripts to populate the dataset; (b) wire publish → Vercel deploy hook so edits redeploy; (c) optionally model the bespoke home/security prose. Content layer: `lib/sanity/content.ts`. Seeds: `scripts/seed-sanity.mjs` + `scripts/seed-utilities.mjs`.
 5. Decide final fate of internal pages (keep `noindex`, password-gate, or remove).
 6. Brand-tint the **Qualia widget** in the Qualia dashboard to match the palette (token already embedded site-wide via `app/(site)/layout.tsx`).
 7. Post-launch: submit `https://woodlandtitle.com/sitemap.xml` to Google Search Console.
