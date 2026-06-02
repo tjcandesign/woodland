@@ -5,6 +5,22 @@ see `CLAUDE.md` in the repo root.
 
 ---
 
+## 2026-06-02 — Phase 3: Sanity wired + seeded (content now editable)
+
+Made site content editable from the Sanity backend, end-to-end.
+
+- **Content layer** `lib/sanity/content.ts`: every getter fetches from Sanity and merges over a hardcoded fallback (= current copy). Empty dataset → renders current copy, build never breaks; seeded → renders Sanity; edit → flows through on next build.
+- **Wired all pages + Header/Footer:** layout fetches the 3 singletons and passes them to the (client) Header/Footer as props. Services / closing-process / code-of-conduct / utilities render from their collections via GROQ; every page hero + meta from `page` docs; all CTAs/contact/footer/nav from singletons. Portable Text via `components/PortableBody.tsx`.
+- **Utilities:** single source of truth `lib/sanity/utilities-data.ts` (DC/MD/VA, 61 listings) → grouped renderer + `scripts/seed-utilities.mjs`. Many links are still `#` placeholders (carried from the original site).
+- **Seeded the dataset:** `scripts/seed-sanity.mjs` + `scripts/seed-utilities.mjs` → 90 docs (3 singletons, 2 services, 3 steps, 2 values, 7 pages, 61 utilities). Idempotent (fixed `_id`s + createOrReplace).
+- **Verified end-to-end:** patched `siteSettings.tagline` via API → rebuilt → new value appeared in the built footer → reverted. The site genuinely reads from Sanity.
+- **Write token** added to `.env.local` (gitignored) for seeding; live site uses the read token (already in Vercel env).
+- **Security catch:** a malformed earlier shell command had created a stray untracked file `.env.localsk…<token>` (token in the *filename*). The default `.env*.local` ignore rule didn't match it. Deleted it, confirmed (with correct exit-code checks — earlier `| head` masking gave a false "found") that it **never** reached any commit/origin, and hardened `.gitignore` with `.env.local*` + `.env`. The write token was never committed; it was pasted in chat though, so rotating it is reasonable.
+- **Still hardcoded:** bespoke home/security marketing prose (heroes/CTAs/collections/contact/footer/utilities are all editable).
+- **Remaining:** publish→rebuild webhook (Sanity → Vercel deploy hook) — documented in README "Sanity editing & publish flow".
+
+---
+
 ## 2026-05-29 — Finalization + launch prep (Next.js site)
 
 ### Context
