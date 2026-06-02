@@ -1,22 +1,43 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { getPage, getSiteSettings } from '@/lib/sanity/content';
 
-export const metadata: Metadata = {
-  title: 'Security & Privacy — Woodland Estate & Title',
-  description: 'How Woodland Estate & Title protects client data and funds — encrypted cloud-based settlement software, ALTA best practices, and CertifID wire fraud prevention.',
+const HERO_FALLBACK = {
+  title: 'Security & Privacy',
+  metaDescription:
+    'How Woodland Estate & Title protects client data and funds — encrypted cloud-based settlement software, ALTA best practices, and CertifID wire fraud prevention.',
+  hero: {
+    tag: 'Security & Privacy',
+    heading: 'Security & Privacy',
+    sub: 'we take your data and privacy seriously',
+    compact: true,
+  },
 };
 
-export default function SecurityPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage('security', HERO_FALLBACK);
+  return {
+    title: `${page.title} — Woodland Estate & Title`,
+    description: page.metaDescription,
+  };
+}
+
+export default async function SecurityPage() {
+  const [page, settings] = await Promise.all([
+    getPage('security', HERO_FALLBACK),
+    getSiteSettings(),
+  ]);
+  const hero = page.hero || HERO_FALLBACK.hero;
   return (
     <main>
       <section className="hero hero-compact">
         <div className="hero-bg"></div>
         <div className="hero-overlay"></div>
         <div className="hero-inner">
-          <div className="hero-tag">Security &amp; Privacy</div>
-          <h1>Security &amp; Privacy</h1>
+          {hero.tag && <div className="hero-tag">{hero.tag}</div>}
+          <h1>{hero.heading}</h1>
           <div className="hero-divider"></div>
-          <p className="hero-sub">we take your data and privacy seriously</p>
+          <p className="hero-sub">{hero.sub}</p>
         </div>
       </section>
 
