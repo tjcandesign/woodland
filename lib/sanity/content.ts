@@ -153,3 +153,36 @@ export async function getPage(slug: string, fallback: PageDoc): Promise<PageDoc>
   if (!data) return fallback;
   return { ...fallback, ...data, hero: { ...fallback.hero, ...(data.hero || {}) } };
 }
+
+// ---------------------------------------------------------------- utilities
+type UtilityListingDoc = {
+  provider: string; region: 'dc' | 'md' | 'va'; county: string;
+  linkLabel?: string; url?: string; phone?: string; phoneTel?: string; email?: string; order?: number;
+};
+const REGION_LABELS: Record<string, string> = { dc: 'District of Columbia', md: 'Maryland', va: 'Virginia' };
+const REGION_ORDER = ['dc', 'md', 'va'];
+
+// Returns utilities grouped region → county → providers. Uses Sanity listings
+// when present, otherwise the bundled UTILITIES constant.
+export async function getUtilities(): Promise<UtilityRegion[]> {
+  const docs = await safe(client.fetch(utilityListingsQuery), [] as UtilityListingDoc[]);
+  if (!docs.length) return UTILITIES;
+
+  const byRegion = new Map<string, Map<string, UtilityListingDoc[]>>();
+  for (const d of docs) {
+    if (!byRegion.has(d.region)) byRegion.set(d.region, new Map());
+    const counties = byRegion.get(d.region)!;
+    if (!counties.has(d.county)) counties.set(d.county, []);
+    counties.get(d.county)!.push(d);
+  }
+  return REGION_ORDER.filter((r) => byRegion.has(r)).map((r) => ({
+    region: r as 'dc' | 'md' | 'va',
+    label: REGION_LABELS[r],
+    counties: [...byRegion.get(r)!.entries()].map(([county, providers]) => ({
+      county,
+      providers: providers
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+        .map(({ provider, linkLabel, url, phone, phoneTel, email }) => ({ provider, linkLabel, url, phone, phoneTel, email })),
+    })),
+  }));
+}
