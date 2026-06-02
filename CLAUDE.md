@@ -66,7 +66,7 @@ name, not a nature brand. Keep motion subtle. Don't make it salesy / influencer-
 ## Outstanding work (next session, start here)
 
 1. ✅ ~~Wire DNS for `woodlandtitle.com`~~ — DONE, site is live at www.woodlandtitle.com.
-2. **Finish the Sanity publish webhook** (Stage 2): the Vercel deploy hook exists + works; create the Sanity webhook (sanity.io/manage → API → Webhooks) pointing at it so publishes auto-deploy. Steps in README "Sanity editing & publish flow". Until done, publishes go live on next `main` push / manual redeploy.
+2. ✅ ~~Sanity publish webhook~~ — DONE & verified: publish in `/studio` → Sanity webhook → Vercel deploy hook → rebuild → live in ~60s, fully automated (confirmed an auto-deploy from a real edit 2026-06-02).
 3. **Fix git email:** `git config user.email "tj@wrkhrs.co"` (auto-commit hook still attributes to `renoschubert`).
 4. **Rotate the Sanity write token** — it was pasted in chat; revoke + regenerate when convenient (live site only needs the read token).
 6. Submit `https://woodlandtitle.com/sitemap.xml` to Google Search Console.
