@@ -1,22 +1,46 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { getValues, getPage, getSiteSettings } from '@/lib/sanity/content';
+import PortableBody from '@/components/PortableBody';
 
-export const metadata: Metadata = {
-  title: 'Code of Conduct — Woodland Estate & Title',
-  description: 'Transparency and accessibility are the values that guide every file we touch — because process matters and trust is earned through consistency.',
+const HERO_FALLBACK = {
+  title: 'Code of Conduct',
+  metaDescription:
+    'Transparency and accessibility are the values that guide every file we touch — because process matters and trust is earned through consistency.',
+  hero: {
+    tag: 'Code of Conduct',
+    heading: 'Code of Conduct',
+    sub: 'Process matters. Transparency throughout the settlement process leads to significant savings for the buyer on title insurance premiums.',
+    compact: true,
+  },
 };
 
-export default function CodeOfConductPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage('code-of-conduct', HERO_FALLBACK);
+  return {
+    title: `${page.title} — Woodland Estate & Title`,
+    description: page.metaDescription,
+  };
+}
+
+export default async function CodeOfConductPage() {
+  const [values, page, settings] = await Promise.all([
+    getValues(),
+    getPage('code-of-conduct', HERO_FALLBACK),
+    getSiteSettings(),
+  ]);
+  const hero = page.hero || HERO_FALLBACK.hero;
+
   return (
     <main>
       <section className="hero hero-compact">
         <div className="hero-bg"></div>
         <div className="hero-overlay"></div>
         <div className="hero-inner">
-          <div className="hero-tag">Code of Conduct</div>
-          <h1>Code of Conduct</h1>
+          {hero.tag && <div className="hero-tag">{hero.tag}</div>}
+          <h1>{hero.heading}</h1>
           <div className="hero-divider"></div>
-          <p className="hero-sub">Process matters. Transparency throughout the settlement process leads to significant savings for the buyer on title insurance premiums.</p>
+          <p className="hero-sub">{hero.sub}</p>
         </div>
       </section>
 
@@ -35,17 +59,13 @@ export default function CodeOfConductPage() {
           <h2>Two principles, practiced daily.</h2>
 
           <div className="values-grid">
-            <div className="value-block">
-              <div className="value-label">Value 01</div>
-              <h3>Transparency</h3>
-              <p>We value transparency and actively seek out the seller&apos;s title insurance policy allowing us to offer significantly discounted insurance rates otherwise unavailable. We believe our knowledge of the title insurance industry is a benefit to you and put that into action by offering the best rate possible.</p>
-            </div>
-
-            <div className="value-block">
-              <div className="value-label">Value 02</div>
-              <h3>Accessibility</h3>
-              <p>We value your time and energy and respond quickly with complete, straight-forward answers so you can make informed decisions.</p>
-            </div>
+            {values.map((v) => (
+              <div className="value-block" key={v._id}>
+                {v.label && <div className="value-label">{v.label}</div>}
+                <h3>{v.title}</h3>
+                <PortableBody value={v.description} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -54,7 +74,7 @@ export default function CodeOfConductPage() {
         <h2>Ready to close with confidence?</h2>
         <p>Whether you&apos;re a buyer, seller, lender, or agent, expect a quick response and straightforward answers.</p>
         <div className="cta-actions">
-          <a className="btn btn-primary" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
+          <a className="btn btn-primary" href={settings.earnestMoneyUrl} target="_blank" rel="noopener">Send Earnest Money</a>
           <Link className="btn btn-secondary" href="/contact">Contact Us</Link>
         </div>
       </section>
