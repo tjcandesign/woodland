@@ -50,10 +50,10 @@ const SITE_SETTINGS_FALLBACK: SiteSettings = {
   title: 'Woodland Estate & Title',
   description:
     'Personable, transparent, attorney-led property settlements in Washington DC, Virginia and Maryland. A clearing house for buyers, sellers, lenders, and their agents, with particular care for complicated files.',
-  copyright: '©2018 by Woodland Estate & Title',
+  copyright: '©2026 by Woodland Estate & Title',
   tagline: 'Attorney-led property settlements, steady and thorough. The way closings ought to feel.',
   earnestMoneyUrl: 'https://woodlandtitledc.paymints.io/create-account',
-  orderEmail: 'woodlandteam@woodlandtitle.com',
+  orderEmail: 'team@woodlandtitle.com',
   underwriters: 'Fidelity National Title Insurance Company · Stewart Title Guaranty Company',
 };
 export async function getSiteSettings(): Promise<SiteSettings> {
@@ -70,7 +70,7 @@ const CONTACT_FALLBACK: ContactInfo = {
   mapUrl: 'https://maps.google.com/?q=659+C+Street+SE+Washington+DC+20003',
   mapEmbedUrl: 'https://www.google.com/maps?q=659+C+Street+SE+Washington+DC+20003&output=embed',
   phone: '(202) 516-6855', phoneTel: '2025166855', fax: '(202) 888-1179',
-  email: 'woodlandteam@woodlandtitle.com', hours: 'By appointment',
+  email: 'team@woodlandtitle.com', hours: 'By appointment',
 };
 export async function getContactInfo(): Promise<ContactInfo> {
   const data = await safe(client.fetch(contactInfoQuery), null as ContactInfo | null);

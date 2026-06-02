@@ -58,10 +58,10 @@ const siteSettings = {
   title: 'Woodland Estate & Title',
   description:
     'Personable, transparent, attorney-led property settlements in Washington DC, Virginia and Maryland. A clearing house for buyers, sellers, lenders, and their agents, with particular care for complicated files.',
-  copyright: '©2018 by Woodland Estate & Title',
+  copyright: '©2026 by Woodland Estate & Title',
   tagline: 'Attorney-led property settlements, steady and thorough. The way closings ought to feel.',
   earnestMoneyUrl: 'https://woodlandtitledc.paymints.io/create-account',
-  orderEmail: 'woodlandteam@woodlandtitle.com',
+  orderEmail: 'team@woodlandtitle.com',
   underwriters: 'Fidelity National Title Insurance Company · Stewart Title Guaranty Company',
   projectProposalUrl: 'https://woodlandtitleproposal.netlify.app/',
 };
@@ -76,7 +76,7 @@ const contactInfo = {
   phone: '(202) 516-6855',
   phoneTel: '2025166855',
   fax: '(202) 888-1179',
-  email: 'woodlandteam@woodlandtitle.com',
+  email: 'team@woodlandtitle.com',
   hours: 'By appointment',
 };
 
