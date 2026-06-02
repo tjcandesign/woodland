@@ -6,8 +6,10 @@ import {
   servicesQuery,
   closingStepsQuery,
   valuesQuery,
+  utilityListingsQuery,
   pageBySlugQuery,
 } from './queries';
+import { UTILITIES, type UtilityRegion } from './utilities-data';
 
 /**
  * Content access layer.
