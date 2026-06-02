@@ -18,7 +18,11 @@ Sister site: **Bainbridge Law** at `/Users/tjcichecki/projects/bainbridge-law` (
   - **Deployment Protection = Standard.** This is correct — it only gates `*.vercel.app` URLs; the custom domain serves publicly. Don't disable it.
   - **Ignore two stale Vercel projects:** `woodlandsite` (old static site, was previously live) and `woodlandsite-kmrk` (broken — pointed at the wrong repo). Neither is our launch vehicle.
 - **Production domain:** **`woodlandtitle.com`** (registrar: **GoDaddy**). ⚠️ **DNS not yet wired** — see README.md "DNS handoff". Records: `A @ → 76.76.21.21`, `CNAME www → cname.vercel-dns.com`. Leave MX records alone.
-- **Sanity:** project id **`plu047nm`**, dataset `production`. Studio at `/studio`. Env vars (`NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_API_READ_TOKEN`) live in **`.env.local`** (gitignored) and in Vercel env. **Schemas exist, Studio works, but pages do NOT query Sanity yet** — all page content is still hardcoded JSX. Wiring that up is "Phase 3" (see SANITY-HANDOFF.md).
+- **Sanity:** project id **`plu047nm`**, dataset `production`. Studio at `/studio`. Env vars (`NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_API_READ_TOKEN`) live in **`.env.local`** (gitignored) and in Vercel env.
+  - **Pages ARE wired to Sanity (Phase 3 done).** Every page fetches from Sanity via `lib/sanity/content.ts`, which merges Sanity data over hardcoded **fallbacks** = the current copy. So the site renders identically whether or not the dataset is seeded; once an editor publishes, the change flows through on the next build. No page breaks on an empty dataset.
+  - **The dataset is still EMPTY / not seeded** (needs a write token — see below). Until seeded, the site shows the fallback copy and the Studio shows empty content types.
+  - **To seed:** add `SANITY_WRITE_TOKEN=<editor token>` to `.env.local`, then `node scripts/seed-sanity.mjs` (singletons/services/closing-steps/values/page-heroes) and `node scripts/seed-utilities.mjs` (utility directory). Idempotent (fixed `_id`s + createOrReplace).
+  - **Not yet done:** publish→rebuild webhook (Sanity webhook → Vercel deploy hook), and the bespoke home/security marketing prose is still hardcoded (heroes + CTAs + collections + contact + footer + utilities are all editable).
 
 ## ⚠️ Known gotchas
 
