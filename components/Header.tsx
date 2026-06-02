@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import type { NavLink } from '@/lib/sanity/content';
 
-export default function Header() {
+export default function Header({ nav }: { nav: NavLink[] }) {
   const [navOpen, setNavOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const lastY = useRef(0);
