@@ -1,20 +1,15 @@
 export const apiVersion = '2025-01-01';
 
-export const dataset = assertValue(
-  process.env.NEXT_PUBLIC_SANITY_DATASET,
-  'Missing environment variable: NEXT_PUBLIC_SANITY_DATASET'
-);
+// These are public values (NEXT_PUBLIC_*). We default to the known project/
+// dataset so a missing env var on the build host can never break the build —
+// it would only ever fall back to the correct production values anyway.
+export const projectId =
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'plu047nm';
 
-export const projectId = assertValue(
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  'Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID'
-);
+export const dataset =
+  process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
 
+// Optional: the production dataset is public-read, so published content is
+// fetchable without a token. The token is only used to improve rate limits /
+// support private datasets.
 export const readToken = process.env.SANITY_API_READ_TOKEN;
-
-function assertValue<T>(v: T | undefined, errorMessage: string): T {
-  if (v === undefined) {
-    throw new Error(errorMessage);
-  }
-  return v;
-}
