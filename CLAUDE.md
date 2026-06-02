@@ -65,8 +65,11 @@ name, not a nature brand. Keep motion subtle. Don't make it salesy / influencer-
 
 ## Outstanding work (next session, start here)
 
-1. **Wire DNS** for `woodlandtitle.com` in GoDaddy → site goes live (README.md has exact steps).
-2. **Fix git email:** `git config user.email "tj@wrkhrs.co"`.
+1. ✅ ~~Wire DNS for `woodlandtitle.com`~~ — DONE, site is live at www.woodlandtitle.com.
+2. **Finish the Sanity publish webhook** (Stage 2): the Vercel deploy hook exists + works; create the Sanity webhook (sanity.io/manage → API → Webhooks) pointing at it so publishes auto-deploy. Steps in README "Sanity editing & publish flow". Until done, publishes go live on next `main` push / manual redeploy.
+3. **Fix git email:** `git config user.email "tj@wrkhrs.co"` (auto-commit hook still attributes to `renoschubert`).
+4. **Rotate the Sanity write token** — it was pasted in chat; revoke + regenerate when convenient (live site only needs the read token).
+5. Submit `https://woodlandtitle.com/sitemap.xml` to Google Search Console.
 3. **Confirm the `woodlandteam@woodlandtitle.com` mailbox exists** (footer/contact email was switched from the `-dc` domain; mail will bounce if the box isn't provisioned). Note: `Send Earnest Money` still points at `woodlandtitledc.paymints.io` — left as-is intentionally; confirm that's still correct.
 4. **Phase 3 — Sanity:** ✅ pages wired to GROQ with fallbacks. **Remaining:** (a) add `SANITY_WRITE_TOKEN` to `.env.local` and run the two seed scripts to populate the dataset; (b) wire publish → Vercel deploy hook so edits redeploy; (c) optionally model the bespoke home/security prose. Content layer: `lib/sanity/content.ts`. Seeds: `scripts/seed-sanity.mjs` + `scripts/seed-utilities.mjs`.
 5. Decide final fate of internal pages (keep `noindex`, password-gate, or remove).
