@@ -19,6 +19,12 @@ Made site content editable from the Sanity backend, end-to-end.
 - **Still hardcoded:** bespoke home/security marketing prose (heroes/CTAs/collections/contact/footer/utilities are all editable).
 - **Remaining:** publish→rebuild webhook (Sanity → Vercel deploy hook) — documented in README "Sanity editing & publish flow".
 
+### Build outage caught + fixed (same day)
+- After wiring, **every Vercel production deploy was ERRORing** (~20 in a row). Cause: `sanity/env.ts` hard-threw `Missing environment variable: NEXT_PUBLIC_SANITY_DATASET` at build time, because those env vars aren't set in the Vercel project (they exist only in local `.env.local`). Local builds passed (they load `.env.local`); Vercel builds didn't.
+- **Fix:** `sanity/env.ts` now defaults the public values (`projectId='plu047nm'`, `dataset='production'`) instead of throwing — these are `NEXT_PUBLIC_*` so hardcoding the known values is safe. The `production` dataset is **public-read** (verified: token-less API queries work), so the build fetches published content with no token. `lib/sanity/content.ts` already wraps every fetch in `safe()` try/catch → fallback, so a fetch failure can't break the build either. Production deploys are GREEN again (commit `2063496`).
+- Optional follow-up: still worth adding `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_API_READ_TOKEN` to the Vercel project envs (belt-and-suspenders; required if the dataset is ever made private).
+- **Vercel deploy hook created** (`sanity-publish`, branch `main`) and verified working (POST → build job). The hook URL is the trigger for the Sanity webhook (Stage 2).
+
 ---
 
 ## 2026-05-29 — Finalization + launch prep (Next.js site)
