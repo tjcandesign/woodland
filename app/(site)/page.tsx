@@ -2,13 +2,31 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Parallax from '@/components/Parallax';
 import ProcessArrows from '@/components/ProcessArrows';
+import { getPage, getSiteSettings } from '@/lib/sanity/content';
 
-export const metadata: Metadata = {
+const HERO_FALLBACK = {
   title: 'Woodland Estate & Title — Attorney-Led Property Settlements in DC, Maryland & Virginia',
-  description: 'Personable, transparent, attorney-led property settlements in Washington DC, Virginia and Maryland. A clearing house for buyers, sellers, lenders, and their agents, with particular care for complicated files.',
+  metaDescription:
+    'Personable, transparent, attorney-led property settlements in Washington DC, Virginia and Maryland. A clearing house for buyers, sellers, lenders, and their agents, with particular care for complicated files.',
+  hero: {
+    heading: 'Personable, transparent, attorney-led property settlements.',
+    sub: 'Serving Washington, DC, Virginia, and Maryland. A clearing house for buyers, sellers, lenders, and their agents, with particular care for complicated files.',
+    compact: false,
+  },
 };
 
-export default function HomePage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage('home', HERO_FALLBACK);
+  return { title: HERO_FALLBACK.title, description: page.metaDescription };
+}
+
+export default async function HomePage() {
+  const [page, settings] = await Promise.all([
+    getPage('home', HERO_FALLBACK),
+    getSiteSettings(),
+  ]);
+  const hero = page.hero || HERO_FALLBACK.hero;
+
   return (
     <>
       <Parallax />
@@ -18,11 +36,11 @@ export default function HomePage() {
         <div className="hero-bg"></div>
         <div className="hero-overlay"></div>
         <div className="hero-inner">
-          <h1>Personable, transparent,<br />attorney-led property settlements.</h1>
-          <p className="hero-sub">Serving Washington, DC, Virginia, and Maryland. A clearing house for buyers, sellers, lenders, and their agents, with particular care for complicated files.</p>
+          <h1>{hero.heading}</h1>
+          <p className="hero-sub">{hero.sub}</p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
-            <a className="btn btn-secondary" href="mailto:woodlandteam@woodlandtitle.com">Order Services</a>
+            <a className="btn btn-primary" href={settings.earnestMoneyUrl} target="_blank" rel="noopener">Send Earnest Money</a>
+            <a className="btn btn-secondary" href={`mailto:${settings.orderEmail}`}>Order Services</a>
           </div>
         </div>
       </section>
@@ -113,7 +131,7 @@ export default function HomePage() {
         <h2>Ready to close with confidence?</h2>
         <p>Whether you&apos;re a buyer, seller, lender, or agent, expect a quick response and straightforward answers.</p>
         <div className="cta-actions">
-          <a className="btn btn-primary" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
+          <a className="btn btn-primary" href={settings.earnestMoneyUrl} target="_blank" rel="noopener">Send Earnest Money</a>
           <Link className="btn btn-secondary" href="/contact">Contact Us</Link>
         </div>
       </section>
