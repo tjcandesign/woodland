@@ -71,6 +71,40 @@ See **DNS handoff** below. In short:
 
 ---
 
+# Sanity editing & publish flow
+
+Content is editable in the Studio at `/studio` (or `<project>.sanity.studio`). Pages
+read from Sanity at **build time** (static export), with code fallbacks so an empty
+dataset never breaks the build.
+
+**Editable in Studio:** Site Settings (footer tagline, copyright, underwriters, CTAs,
+order email), Contact Info, Navigation, Services, Closing Steps, Values, every page's
+hero + meta description, and the full Utility directory. *(Bespoke home/security marketing
+prose is still in code.)*
+
+**Seeding / re-seeding** (one-time or to reset to baseline) — needs a write token:
+```bash
+# add to .env.local (gitignored):  SANITY_WRITE_TOKEN=sk...
+node scripts/seed-sanity.mjs       # singletons, services, steps, values, page heroes
+node scripts/seed-utilities.mjs    # utility directory (source: lib/sanity/utilities-data.ts)
+```
+
+## Publish → auto-deploy webhook (TODO — last setup step)
+
+Until this is wired, a publish in Sanity only goes live on the next push to `main`
+(or a manual Vercel redeploy). To make publishing auto-deploy:
+
+1. **Vercel** → project `woodland` → **Settings → Git → Deploy Hooks** → create one
+   named `sanity-publish`, branch `main`. Copy the URL.
+2. **Sanity** → sanity.io/manage → project `plu047nm` → **API → Webhooks → Create**:
+   - URL: the Vercel deploy hook from step 1
+   - Trigger on: **Create, Update, Delete**
+   - Filter (optional): `_type in ["siteSettings","contactInfo","navigation","service","closingStep","value","page","utilityListing"]`
+   - Dataset: `production`
+3. Publish a test edit → confirm a new Vercel deployment fires (~30–60s to live).
+
+---
+
 # DNS handoff note
 
 **The production domain almost certainly lives in GoDaddy or Squarespace.**
