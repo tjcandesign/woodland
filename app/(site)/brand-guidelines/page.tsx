@@ -11,7 +11,7 @@ export default function BrandGuidelinesRedirect() {
   return (
     <script
       dangerouslySetInnerHTML={{
-        __html: "window.location.replace('/brand.html');",
+        __html: "window.location.replace('/brand/');",
       }}
     />
   );
