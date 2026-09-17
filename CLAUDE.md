@@ -42,8 +42,13 @@ name, not a nature brand. Keep motion subtle. Don't make it salesy / influencer-
 ## Pages
 
 - **Public (indexed):** `/` (home), `/services`, `/closing-process`, `/code-of-conduct`, `/contact`, `/security`, `/utilities`. Source: `app/(site)/**/page.tsx`.
-- **Internal (all `noindex`):** `/brand`, `/brand-guidelines`, `/work`, `/comms-plan`, `/listing-refresh`, `/project-status`. Excluded from `sitemap.ts`.
+- **Brand doc (`noindex`, public):** `/brand` — single combined public brand page (Story, Mission, Beliefs, Character, Voice, Typography & Color, Logos). `/brand-guidelines` redirects to it. Source: `public/brand.html`. Internal-only sections (Key Messages/Proof Points, Video Talking Points) were CUT for the public version 2026-09-17.
 - **Studio:** `/studio` (Sanity).
+- **TAKEN OFFLINE 2026-09-17** (client asked; had pricing/invoices/engagement plan): `/work`, `/comms-plan`, `/listing-refresh`, `/project-status`, and the invoice/strategy PDFs. Source archived under `legacy/internal-pages/` (excluded from build via tsconfig `exclude: ["legacy"]`). All return 404 live. Do NOT re-add these to `app/(site)/` or `public/` without client approval (see global password rule).
+
+## ⚠️ trailingSlash gotcha
+
+`next.config.ts` has `trailingSlash: true`. A static `public/*.html` file is served at its **clean URL** (`/brand`), and the explicit `/brand.html` **404s**. So link to `/brand`, never `/brand.html`. Redirect stubs must target `/brand/`, not `/brand.html`.
 
 ## Key files
 
