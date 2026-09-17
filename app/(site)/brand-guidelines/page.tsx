@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Woodland Brand Language',
+  title: 'Woodland Brand Guidelines',
   robots: 'noindex, nofollow',
 };
 
-// Internal page — redirects to the static brand guidelines document.
-// Server component so the noindex tag is emitted into <head> for crawlers.
+// The brand guidelines + brand story are now a single canonical page at
+// /brand.html. This route redirects there so the /brand-guidelines URL keeps working.
 export default function BrandGuidelinesRedirect() {
   return (
     <script
       dangerouslySetInnerHTML={{
-        __html: "window.location.replace('/brand-guidelines.html');",
+        __html: "window.location.replace('/brand.html');",
       }}
     />
   );
