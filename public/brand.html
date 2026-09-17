@@ -125,11 +125,13 @@
     }
 
     /* ─── LAYOUT ─── */
+    /* Inset the sidebar + content by the same gutter as the header/hero so the
+       nav's left edge lines up with the page content at every width (the gutter
+       also centers the column to --content-max on wide screens). */
     .page-wrap {
       display: flex;
       min-height: 100vh;
-      max-width: var(--content-max);
-      margin: 0 auto;
+      padding: 0 var(--gutter);
     }
 
     /* ─── SIDE NAV ─── */
