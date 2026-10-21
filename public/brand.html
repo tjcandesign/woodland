@@ -706,6 +706,106 @@
       margin-top: 4px;
     }
 
+    /* ─── CORRESPONDENCE ─── */
+    .sig-builder {
+      background: var(--bg-cream);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      margin-top: 24px;
+    }
+    .sig-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 18px;
+      margin-bottom: 24px;
+    }
+    .sig-fields label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .sig-fields input {
+      width: 100%;
+      font: 15px/1.4 var(--sans);
+      color: var(--text-dark);
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 9px 12px;
+    }
+    .sig-fields input:focus {
+      outline: none;
+      border-color: var(--accent-dark);
+    }
+    .sig-preview {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px 24px;
+      overflow-x: auto;
+    }
+    .sig-preview > table:first-child td { white-space: nowrap; }
+    .sig-builder .download-actions { align-items: center; margin-top: 16px; }
+    .sig-builder button.download-btn { background: var(--bg-white); cursor: pointer; font-family: var(--sans); }
+    .sig-status { font-size: 13px; color: var(--text-light); }
+    .sig-install {
+      margin-top: 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    .sig-install summary {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .sig-install h5 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 18px 0 6px;
+    }
+    .sig-install ol {
+      margin: 0 0 0 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-medium);
+    }
+    .letterhead-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      margin-top: 24px;
+    }
+    .letterhead-card .download-preview {
+      height: auto;
+      padding: 20px;
+      border-right: 1px solid var(--border);
+    }
+    .letterhead-card .download-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+    }
+    .letterhead-card .download-info {
+      border-top: 0;
+      padding: 24px 28px;
+    }
+    .letterhead-card .download-info p { font-size: 14px; color: var(--text-medium); line-height: 1.6; margin-bottom: 10px; }
+    @media (max-width: 700px) {
+      .sig-fields { grid-template-columns: 1fr; }
+      .sig-builder { padding: 18px; }
+      .sig-preview { padding: 20px 16px; }
+      .letterhead-card { grid-template-columns: 1fr; }
+      .letterhead-card .download-preview { border-right: 0; border-bottom: 1px solid var(--border); }
+      .letterhead-card .download-preview img { max-width: 240px; margin: 0 auto; }
+    }
+
     /* ─── FOOTER ─── */
     .footer {
       background: var(--bg-dark);
@@ -774,6 +874,7 @@
       <a href="#voice">Voice Guidelines</a>
       <a href="#typography">Typography &amp; Color</a>
       <a href="#logos">Logo Downloads</a>
+      <a href="#correspondence">Email &amp; Letterhead</a>
     </nav>
 
     <!-- ─── MAIN ─── -->
@@ -1124,6 +1225,84 @@
         </div>
       </section>
 
+      <section id="correspondence" class="section section-alt">
+        <div class="section-inner">
+          <div class="section-tag">Correspondence</div>
+          <h2>Email &amp; Letterhead</h2>
+          <p>The signature and letterhead that every Woodland email and letter goes out on. Both are set in Georgia, which comes installed on every computer, so they look the same on whatever screen opens them.</p>
+
+          <div class="divider"></div>
+
+          <h4 style="font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 8px;">Email Signature</h4>
+          <p>Fill in your details, copy the signature, and paste it into your mail app&rsquo;s signature settings. The circle mark makes one slow turn when the email opens, then rests.</p>
+
+          <div class="sig-builder">
+            <div class="sig-fields">
+              <div><label for="sig-name">Name</label><input id="sig-name" type="text" placeholder="Full name" autocomplete="off"></div>
+              <div><label for="sig-title">Title</label><input id="sig-title" type="text" placeholder="Title" autocomplete="off"></div>
+              <div><label for="sig-phone">Phone</label><input id="sig-phone" type="tel" value="(202) 516-6855" autocomplete="off"></div>
+              <div><label for="sig-email">Email</label><input id="sig-email" type="email" placeholder="name@woodlandtitle.com" autocomplete="off"></div>
+            </div>
+            <div class="sig-preview" id="sig-preview"></div>
+            <div class="download-actions">
+              <button type="button" class="download-btn" id="sig-copy">Copy signature</button>
+              <button type="button" class="download-btn" id="sig-replay">Replay animation</button>
+              <span class="sig-status" id="sig-status"></span>
+            </div>
+
+            <details class="sig-install">
+              <summary>How to install it</summary>
+              <h5>Outlook for Mac, and the new Outlook for Windows</h5>
+              <ol>
+                <li>Copy the signature above.</li>
+                <li>Go to Settings, then Signatures, and add a new one.</li>
+                <li>Paste it into the editor and save.</li>
+                <li>Under default signatures, pick it for new messages and for replies.</li>
+              </ol>
+              <h5>Classic Outlook for Windows</h5>
+              <ol>
+                <li>Copy the signature above.</li>
+                <li>Go to File, Options, Mail, then Signatures, and click New.</li>
+                <li>Paste it into the edit box and click OK.</li>
+                <li>Classic Outlook shows the mark without the turn. That&rsquo;s expected.</li>
+              </ol>
+              <h5>Apple Mail</h5>
+              <ol>
+                <li>Copy the signature above.</li>
+                <li>Go to Mail, Settings, Signatures, choose your account, and click +.</li>
+                <li>Uncheck &ldquo;Always match my default message font,&rdquo; then paste.</li>
+              </ol>
+              <h5>Gmail</h5>
+              <ol>
+                <li>Copy the signature above.</li>
+                <li>Open Settings, See all settings, then scroll to Signature on the General tab.</li>
+                <li>Click Create new, paste, and set it as the default for new emails and replies.</li>
+                <li>Scroll down and click Save Changes.</li>
+              </ol>
+            </details>
+          </div>
+
+          <div style="margin-top: 56px;">
+            <h4 style="font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 8px;">Word Letterhead</h4>
+            <div class="download-card letterhead-card">
+              <div class="download-preview light-bg">
+                <img src="/assets/templates/woodland-letterhead-preview.jpg" alt="Woodland letterhead, first page" width="935" height="1210" loading="lazy">
+              </div>
+              <div class="download-info">
+                <h4>Branded Correspondence</h4>
+                <p>US Letter. The stacked logo and office details sit on the first page; later pages carry the circle mark and a page number. Replace the bracketed text and write the letter.</p>
+                <p>The template version opens a fresh, untitled letter every time, so the original never gets overwritten.</p>
+                <p class="download-meta">DOTX (Word template) &middot; DOCX (Word document)</p>
+                <div class="download-actions">
+                  <a href="/assets/templates/woodland-letterhead.dotx" download class="download-btn">DOTX</a>
+                  <a href="/assets/templates/woodland-letterhead.docx" download class="download-btn">DOCX</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 
@@ -1174,6 +1353,113 @@
         setTimeout(function() { tip.classList.remove('show'); }, 1200);
       });
     }
+  </script>
+
+  <!-- ─── EMAIL SIGNATURE BUILDER ─── -->
+  <script>
+    (function() {
+      var MARK = 'https://www.woodlandtitle.com/assets/email/woodland-mark-spin.gif';
+      var SERIF = "font-family: Georgia, 'Times New Roman', serif;";
+      var fields = {
+        name: document.getElementById('sig-name'),
+        title: document.getElementById('sig-title'),
+        phone: document.getElementById('sig-phone'),
+        email: document.getElementById('sig-email')
+      };
+      var preview = document.getElementById('sig-preview');
+      var status = document.getElementById('sig-status');
+
+      function esc(v) {
+        return String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      function signature(markSrc) {
+        var name = esc(fields.name.value.trim() || 'Full Name');
+        var title = esc(fields.title.value.trim() || 'Title');
+        var phone = esc(fields.phone.value.trim() || '(202) 516-6855');
+        var digits = (fields.phone.value.replace(/\D/g, '').slice(-10)) || '2025166855';
+        var email = esc(fields.email.value.trim() || 'name@woodlandtitle.com');
+        return '' +
+          '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse: collapse; ' + SERIF + ' color: #3C342B;">' +
+            '<tr>' +
+              '<td valign="middle" style="padding: 0 20px 0 0; vertical-align: middle;">' +
+                '<a href="https://www.woodlandtitle.com/" style="text-decoration: none; border: 0; display: inline-block;">' +
+                  '<img src="' + markSrc + '" alt="Woodland Estate &amp; Title" width="88" height="88" style="display: block; border: 0; outline: none; text-decoration: none; width: 88px; height: 88px;">' +
+                '</a>' +
+              '</td>' +
+              '<td valign="middle" style="padding: 2px 0 2px 20px; vertical-align: middle; border-left: 1px solid #DED3C0; ' + SERIF + '">' +
+                '<div style="' + SERIF + ' font-size: 18px; line-height: 1.25; color: #1B365D; margin: 0;">' + name + '</div>' +
+                '<div style="' + SERIF + ' font-size: 14px; line-height: 1.4; font-style: italic; color: #5A5146; margin: 2px 0 10px 0;">' + title + '</div>' +
+                '<div style="' + SERIF + ' font-size: 13.5px; line-height: 1.6; color: #3C342B;">' +
+                  '<a href="tel:+1' + digits + '" style="color: #3C342B; text-decoration: none;">' + phone + '</a>' +
+                  '<span style="color: #C2B8A1;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>' +
+                  '<a href="mailto:' + email + '" style="color: #3C342B; text-decoration: none;">' + email + '</a><br>' +
+                  '<a href="https://maps.google.com/?q=659+C+Street+SE+Washington+DC+20003" style="color: #7D7568; text-decoration: none;">659 C Street, SE&nbsp;&nbsp;&middot;&nbsp;&nbsp;Washington, DC 20003</a><br>' +
+                  '<a href="https://www.woodlandtitle.com/" style="color: #1B365D; text-decoration: none;">woodlandtitle.com</a>' +
+                '</div>' +
+              '</td>' +
+            '</tr>' +
+          '</table>' +
+          '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse: collapse; margin-top: 16px; max-width: 540px;">' +
+            '<tr>' +
+              '<td style="border-top: 1px solid #DED3C0; padding-top: 10px; ' + SERIF + ' font-size: 10.5px; line-height: 1.55; color: #9E9788;">' +
+                '<span style="color: #7D7568; font-style: italic;">Wire-fraud notice.</span> Woodland Estate &amp; Title will not email new or revised wiring instructions. Always verify wiring instructions by phone, using a number from a separate, trusted source, before transferring funds.' +
+                '<br><br>' +
+                '<span style="color: #7D7568; font-style: italic;">Confidentiality.</span> This message and any attachments may contain confidential or privileged information. If you are not the intended recipient, please notify the sender and delete this email.' +
+              '</td>' +
+            '</tr>' +
+          '</table>';
+      }
+
+      // Typing only redraws the text; the mark keeps its place in the
+      // animation unless Replay asks for a fresh copy.
+      function render(replay) {
+        var oldImg = preview.querySelector('img');
+        preview.innerHTML = signature(replay ? MARK + '?r=' + Date.now() : MARK);
+        if (oldImg && !replay) {
+          var newImg = preview.querySelector('img');
+          newImg.parentNode.replaceChild(oldImg, newImg);
+        }
+        status.textContent = '';
+      }
+
+      Object.keys(fields).forEach(function(k) {
+        fields[k].addEventListener('input', function() { render(false); });
+      });
+      document.getElementById('sig-replay').addEventListener('click', function() { render(true); });
+
+      document.getElementById('sig-copy').addEventListener('click', function() {
+        if (!fields.name.value.trim() || !fields.email.value.trim()) {
+          status.textContent = 'Add your name and email first.';
+          return;
+        }
+        var html = signature(MARK);
+        function fallback() {
+          preview.innerHTML = html;
+          var range = document.createRange();
+          range.selectNodeContents(preview);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          var ok = false;
+          try { ok = document.execCommand('copy'); } catch (e) {}
+          sel.removeAllRanges();
+          status.textContent = ok ? 'Copied. Paste it into your signature settings.' : 'Select the signature and press Cmd+C (Ctrl+C on Windows).';
+        }
+        if (navigator.clipboard && window.ClipboardItem) {
+          navigator.clipboard.write([new ClipboardItem({
+            'text/html': new Blob([html], { type: 'text/html' }),
+            'text/plain': new Blob([preview.innerText], { type: 'text/plain' })
+          })]).then(function() {
+            status.textContent = 'Copied. Paste it into your signature settings.';
+          }, fallback);
+        } else {
+          fallback();
+        }
+      });
+
+      render(false);
+    })();
   </script>
 
 </body>
