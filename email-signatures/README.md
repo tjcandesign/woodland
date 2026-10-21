@@ -1,5 +1,23 @@
 # Woodland email signatures
 
+## Current: Georgia signature with the turning mark (Oct 2026)
+
+`woodland-signature.html` is the one to install. Everything is set in Georgia (the system-font stand-in for the site's EB Garamond). On the left is the footer's circle W in navy: after a half-second pause, the lettered ring makes a slow half turn (4.5 seconds) and settles in the normal logo position. Most mail apps play it a single time because the GIF has no loop flag. Outlook for Windows shows only the first frame, where the ring is still upside down.
+
+| File | What it is |
+|---|---|
+| `woodland-signature.html` | The signature, with `[TOKENS]` (same tokens as below) |
+| `signature-preview.html` | Preview with sample values, plus Copy and Replay buttons. Serve the repo root over http (`python3 -m http.server`) and open `/email-signatures/signature-preview.html` |
+| `build-mark-gif.mjs` | Rebuilds the GIF from `public/assets/circle-ring-white.svg` + `circle-w-white.svg` (`node email-signatures/build-mark-gif.mjs`, needs ffmpeg) |
+
+Hosted mark: `https://www.woodlandtitle.com/assets/email/woodland-mark-spin.gif` (176 px, shown at 88 px, about 320 KB, 25 fps, 8 colors). There's also a still `woodland-mark.png` in the same folder if an app won't take the GIF.
+
+Install the same way as the older signatures below: open the file in a browser, select all, copy, and paste it into the mail app's signature editor. In Apple Mail, uncheck "Always match my default message font."
+
+---
+
+## Earlier set (May 2026, Calibri)
+
 Three HTML signatures for Woodland Estate & Title. All three render consistently in **Outlook (Mac and Windows), Apple Mail, and Gmail**, and they pull the firm's circle mark from a hosted URL so it doesn't attach to every email.
 
 ## Files

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Woodland Signature Preview</title>
+<style>
+  :root { --bg: #F2EADD; --card: #FFFFFF; --ink: #3C342B; --soft: #7D7568; --line: #DED3C0; --navy: #1B365D; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font: 400 28px/1.2 Georgia, serif; color: var(--navy); margin: 0 0 6px; }
+  p.lede { color: var(--soft); margin: 0 0 28px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 32px 28px; overflow-x: auto; }
+  .label { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--soft); margin: 28px 0 10px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 14px; }
+  button { font: 500 14px/1 Inter, -apple-system, sans-serif; padding: 10px 16px; border-radius: 6px; border: 1px solid var(--navy); background: var(--navy); color: #fff; cursor: pointer; }
+  button.ghost { background: transparent; color: var(--navy); }
+  #status { color: var(--soft); font-size: 13px; align-self: center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Woodland email signature</h1>
+  <p class="lede">Georgia type, the footer's circle W turning once and settling. Sample values filled in below; the source file keeps the tokens.</p>
+
+  <div class="bar">
+    <button id="copy">Copy signature</button>
+    <button id="replay" class="ghost">Replay animation</button>
+    <span id="status"></span>
+  </div>
+
+  <div class="card" id="sig"></div>
+</main>
+<script>
+  const SAMPLE = {
+    '[NAME]': 'Curtis L. Zeager',
+    '[TITLE]': 'Founder',
+    '[DIRECT_PHONE]': '(202) 516-6855',
+    '[EMAIL_TEL_DIGITS]': '2025166855',
+    '[EMAIL]': 'team@woodlandtitle.com',
+  };
+  const HOSTED = 'https://www.woodlandtitle.com/assets/email/woodland-mark-spin.gif';
+  const LOCAL = '../public/assets/email/woodland-mark-spin.gif';
+  let html = '';
+
+  function render(useLocal) {
+    const out = html.replace(/<!--[\s\S]*?-->/, '');
+    const shown = useLocal ? out.split(HOSTED).join(LOCAL + '?t=' + Date.now()) : out;
+    document.getElementById('sig').innerHTML = shown;
+  }
+
+  fetch('woodland-signature.html', { cache: 'no-store' }).then(r => r.text()).then(t => {
+    html = Object.entries(SAMPLE).reduce((s, [k, v]) => s.split(k).join(v), t);
+    render(true);
+  });
+
+  document.getElementById('replay').onclick = () => render(true);
+
+  document.getElementById('copy').onclick = async () => {
+    const status = document.getElementById('status');
+    const clean = html.replace(/<!--[\s\S]*?-->/, '').trim();
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([clean], { type: 'text/html' }),
+        'text/plain': new Blob([document.getElementById('sig').innerText], { type: 'text/plain' }),
+      })]);
+      status.textContent = 'Copied with the hosted image link. Paste into your mail app.';
+    } catch (e) {
+      status.textContent = 'Copy blocked here. Select the signature and press Cmd+C instead.';
+    }
+  };
+</script>
+</body>
+</html>

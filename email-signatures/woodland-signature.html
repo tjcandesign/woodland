@@ -1,0 +1,44 @@
+<!--
+  Woodland Estate & Title — Email Signature (Georgia, animated mark)
+
+  The circle mark is a hosted GIF that turns once, slowly, then stops on the
+  normal logo position. Outlook for Windows shows only the first frame, which
+  is the same resting position, so it looks right everywhere.
+
+  Replace tokens:
+    [NAME]              → Full name (e.g., "Curtis L. Zeager")
+    [TITLE]             → Title
+    [DIRECT_PHONE]      → (xxx) xxx-xxxx
+    [EMAIL_TEL_DIGITS]  → 10 digits for the tel: link, e.g., 2025166855
+    [EMAIL]             → Email address
+
+  Mark: https://www.woodlandtitle.com/assets/email/woodland-mark-spin.gif
+  Rebuild it with: node email-signatures/build-mark-gif.mjs
+-->
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse: collapse; font-family: Georgia, 'Times New Roman', serif; color: #3C342B;">
+  <tr>
+    <td valign="middle" style="padding: 0 20px 0 0; vertical-align: middle;">
+      <a href="https://www.woodlandtitle.com/" style="text-decoration: none; border: 0; display: inline-block;">
+        <img src="https://www.woodlandtitle.com/assets/email/woodland-mark-spin.gif" alt="Woodland Estate &amp; Title" width="88" height="88" style="display: block; border: 0; outline: none; text-decoration: none; width: 88px; height: 88px;">
+      </a>
+    </td>
+    <td valign="middle" style="padding: 2px 0 2px 20px; vertical-align: middle; border-left: 1px solid #DED3C0; font-family: Georgia, 'Times New Roman', serif;">
+      <div style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.25; color: #1B365D; margin: 0;">[NAME]</div>
+      <div style="font-family: Georgia, 'Times New Roman', serif; font-size: 14px; line-height: 1.4; font-style: italic; color: #5A5146; margin: 2px 0 10px 0;">[TITLE]</div>
+      <div style="font-family: Georgia, 'Times New Roman', serif; font-size: 13.5px; line-height: 1.6; color: #3C342B;">
+        <a href="tel:+1[EMAIL_TEL_DIGITS]" style="color: #3C342B; text-decoration: none;">[DIRECT_PHONE]</a><span style="color: #C2B8A1;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="mailto:[EMAIL]" style="color: #3C342B; text-decoration: none;">[EMAIL]</a><br>
+        <a href="https://maps.google.com/?q=659+C+Street+SE+Washington+DC+20003" style="color: #7D7568; text-decoration: none;">659 C Street, SE&nbsp;&nbsp;·&nbsp;&nbsp;Washington, DC 20003</a><br>
+        <a href="https://www.woodlandtitle.com/" style="color: #1B365D; text-decoration: none;">woodlandtitle.com</a>
+      </div>
+    </td>
+  </tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse: collapse; margin-top: 16px; max-width: 540px;">
+  <tr>
+    <td style="border-top: 1px solid #DED3C0; padding-top: 10px; font-family: Georgia, 'Times New Roman', serif; font-size: 10.5px; line-height: 1.55; color: #9E9788;">
+      <span style="color: #7D7568; font-style: italic;">Wire-fraud notice.</span> Woodland Estate &amp; Title will not email new or revised wiring instructions. Always verify wiring instructions by phone, using a number from a separate, trusted source, before transferring funds.
+      <br><br>
+      <span style="color: #7D7568; font-style: italic;">Confidentiality.</span> This message and any attachments may contain confidential or privileged information. If you are not the intended recipient, please notify the sender and delete this email.
+    </td>
+  </tr>
+</table>
